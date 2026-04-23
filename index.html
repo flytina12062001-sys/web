@@ -38,6 +38,7 @@
       font-weight: 700;
       color: #003d82;
       letter-spacing: -0.5px;
+      cursor: pointer;
     }
     nav {
       display: flex;
@@ -112,11 +113,27 @@
     .btn-secondary:hover {
       background: rgba(255,255,255,0.3);
     }
+    .btn-back {
+      background: #666;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .btn-back:hover {
+      background: #555;
+      transform: translateY(-1px);
+    }
     /* Main Content */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+    /* Page Management */
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
     }
     /* Products Section */
     .section {
@@ -169,6 +186,79 @@
       color: #666;
       font-size: 14px;
       line-height: 1.6;
+    }
+    /* Products Page */
+    .category-nav {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .category-btn {
+      padding: 10px 20px;
+      border: 2px solid #003d82;
+      background: #fff;
+      color: #003d82;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    .category-btn:hover, .category-btn.active {
+      background: #003d82;
+      color: #fff;
+    }
+    .products-list {
+      display: grid;
+      gap: 20px;
+    }
+    .product-item {
+      background: #fff;
+      border-left: 4px solid #003d82;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .product-item:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transform: translateX(4px);
+    }
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #003d82;
+      margin-bottom: 8px;
+    }
+    .product-code {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .product-link {
+      color: #ff7a16;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .product-link:hover {
+      color: #e56a05;
+      text-decoration: underline;
+    }
+    .hidden {
+      display: none;
     }
     /* Company Info Section */
     .company-section {
@@ -286,85 +376,6 @@
       background-size: 20px;
       padding-right: 40px;
     }
-    /* Products Page Styles */
-    .products-page {
-      display: none;
-    }
-    .products-page.active {
-      display: block;
-    }
-    .category-nav {
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .category-btn {
-      padding: 10px 20px;
-      border: 2px solid #003d82;
-      background: #fff;
-      color: #003d82;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 14px;
-    }
-    .category-btn:hover, .category-btn.active {
-      background: #003d82;
-      color: #fff;
-    }
-    .products-list {
-      display: grid;
-      gap: 20px;
-    }
-    .product-item {
-      background: #fff;
-      border-left: 4px solid #003d82;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .product-item:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      transform: translateX(4px);
-    }
-    .product-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: #003d82;
-      margin-bottom: 8px;
-    }
-    .product-code {
-      color: #999;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-    .product-desc {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-    .product-link {
-      color: #ff7a16;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
-    .product-link:hover {
-      color: #e56a05;
-      text-decoration: underline;
-    }
-    .hidden {
-      display: none;
-    }
     /* Footer */
     footer {
       background: #1a1a1a;
@@ -427,7 +438,7 @@
   <!-- Header -->
   <header>
     <div class="header-content">
-      <div class="logo">NMM</div>
+      <div class="logo" onclick="showPage('home')">NMM</div>
       <nav>
         <a onclick="showPage('home')" class="active">Home</a>
         <a onclick="showPage('products')">Products</a>
@@ -456,32 +467,32 @@
       <h2 class="section-title">Our Product Categories</h2>
       <p class="section-subtitle">Extensive range of precision measuring and testing instruments</p>
       <div class="products-grid">
-        <div class="product-card" onclick="filterProducts('dimensional')">
+        <div class="product-card" onclick="showProducts('dimensional')">
           <div class="product-icon">📏</div>
           <h3>Dimensional Metrology</h3>
           <p>Calipers, micrometers, height gauges, and bore gauges for precise dimensional measurements</p>
         </div>
-        <div class="product-card" onclick="filterProducts('testing')">
+        <div class="product-card" onclick="showProducts('testing')">
           <div class="product-icon">⚙️</div>
           <h3>Testing Instruments</h3>
           <p>Hardness testers, flaw detectors, force gauges, and torque measurement tools</p>
         </div>
-        <div class="product-card" onclick="filterProducts('3d')">
+        <div class="product-card" onclick="showProducts('3d')">
           <div class="product-icon">🔬</div>
           <h3>3D Measurement</h3>
           <p>Vision measuring systems, profile projectors, and advanced measurement solutions</p>
         </div>
-        <div class="product-card" onclick="filterProducts('data')">
+        <div class="product-card" onclick="showProducts('data')">
           <div class="product-icon">📊</div>
           <h3>Data & Software</h3>
           <p>Digital output systems and software solutions for measurement data management</p>
         </div>
-        <div class="product-card" onclick="filterProducts('machine')">
+        <div class="product-card" onclick="showProducts('machine')">
           <div class="product-icon">🏭</div>
           <h3>On-Machine Measurement</h3>
           <p>Solutions for in-process inspection and on-machine measurement systems</p>
         </div>
-        <div class="product-card" onclick="filterProducts('other')">
+        <div class="product-card" onclick="showProducts('other')">
           <div class="product-icon">🔧</div>
           <h3>Specialized Tools</h3>
           <p>Scales, balances, pressure gauges, and environmental testing equipment</p>
@@ -587,8 +598,9 @@
   </div>
 
   <!-- Products Page -->
-  <div id="products" class="page products-page">
+  <div id="products" class="page">
     <section class="section container">
+      <button onclick="showPage('home')" class="btn btn-back">← Back to Home</button>
       <h2 class="section-title">Products</h2>
 
       <!-- Category Navigation -->
@@ -802,7 +814,23 @@
       // Update navigation active state
       const navLinks = document.querySelectorAll('nav a');
       navLinks.forEach(link => link.classList.remove('active'));
-      event.target.classList.add('active');
+      if (pageId === 'home') {
+        navLinks[0].classList.add('active'); // Home link
+      } else if (pageId === 'products') {
+        navLinks[1].classList.add('active'); // Products link
+      } else if (pageId === 'company') {
+        navLinks[2].classList.add('active'); // Company link
+      } else if (pageId === 'contact') {
+        navLinks[3].classList.add('active'); // Contact link
+      }
+    }
+
+    function showProducts(category) {
+      // Switch to products page
+      showPage('products');
+
+      // Filter products by category
+      filterProducts(category);
     }
 
     function filterProducts(category) {
@@ -811,7 +839,17 @@
 
       // Update active button
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+
+      // If called from button click, use event.target
+      if (event && event.target) {
+        event.target.classList.add('active');
+      } else {
+        // If called from showProducts, find the button by category
+        const activeButton = document.querySelector(`.category-btn[onclick*="${category}"]`);
+        if (activeButton) {
+          activeButton.classList.add('active');
+        }
+      }
 
       // Filter products
       items.forEach(item => {
