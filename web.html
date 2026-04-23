@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSIZE - Precision Measuring Tools & Metrology Instruments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #003d82;
+      letter-spacing: -0.5px;
+    }
+    nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #003d82;
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      margin-bottom: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 14px 32px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #ff7a16;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #e56a05;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 122, 16, 0.3);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Products Section */
+    .section {
+      padding: 80px 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: #003d82;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+      border-color: #003d82;
+    }
+    .product-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .product-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #003d82;
+    }
+    .product-card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    /* Company Info Section */
+    .company-section {
+      background: #f0f5fa;
+    }
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .company-stat {
+      text-align: center;
+    }
+    .company-stat .number {
+      font-size: 42px;
+      font-weight: 700;
+      color: #003d82;
+      margin-bottom: 8px;
+    }
+    .company-stat .label {
+      color: #666;
+      font-size: 16px;
+    }
+    /* News Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .news-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+    .news-content {
+      padding: 24px;
+    }
+    .news-date {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .news-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #003d82;
+      line-height: 1.4;
+    }
+    .news-card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    /* Contact Form Section */
+    .contact-section {
+      background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
+      color: #fff;
+      padding: 80px 20px;
+    }
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-section .section-title {
+      color: #fff;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: inherit;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #ff7a16;
+      background: rgba(255,255,255,0.15);
+    }
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+      padding-right: 40px;
+    }
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 60px 20px 30px;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-section h4 {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+    .footer-section a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .footer-section a:hover {
+      color: #ff7a16;
+    }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 30px;
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        gap: 16px;
+      }
+      nav a {
+        font-size: 13px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">NMM</div>
+      <nav>
+        <a href="products.html">Products</a>
+        <a href="#company">Company</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Precision Measuring Tools & Metrology Instruments</h1>
+      <p>Comprehensive solution provider of precision measurement instruments for dimensional metrology, testing, and quality control</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Request Information</a>
+        <a href="products.html" class="btn btn-secondary">Explore Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="section container">
+    <h2 class="section-title">Our Product Categories</h2>
+    <p class="section-subtitle">Extensive range of precision measuring and testing instruments</p>
+    <div class="products-grid">
+      <a href="products.html?category=dimensional" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">📏</div>
+          <h3>Dimensional Metrology</h3>
+          <p>Calipers, micrometers, height gauges, and bore gauges for precise dimensional measurements</p>
+        </div>
+      </a>
+      <a href="products.html?category=testing" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">⚙️</div>
+          <h3>Testing Instruments</h3>
+          <p>Hardness testers, flaw detectors, force gauges, and torque measurement tools</p>
+        </div>
+      </a>
+      <a href="products.html?category=3d" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">🔬</div>
+          <h3>3D Measurement</h3>
+          <p>Vision measuring systems, profile projectors, and advanced measurement solutions</p>
+        </div>
+      </a>
+      <a href="products.html?category=data" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">📊</div>
+          <h3>Data & Software</h3>
+          <p>Digital output systems and software solutions for measurement data management</p>
+        </div>
+      </a>
+      <a href="products.html?category=machine" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">🏭</div>
+          <h3>On-Machine Measurement</h3>
+          <p>Solutions for in-process inspection and on-machine measurement systems</p>
+        </div>
+      </a>
+      <a href="products.html?category=other" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <div class="product-icon">🔧</div>
+          <h3>Specialized Tools</h3>
+          <p>Scales, balances, pressure gauges, and environmental testing equipment</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Company Section -->
+  <section id="company" class="section company-section">
+    <div class="container">
+      <h2 class="section-title">INSIZE At A Glance</h2>
+      <div class="company-grid">
+        <div class="company-stat">
+          <div class="number">1995</div>
+          <div class="label">Founded</div>
+        </div>
+        <div class="company-stat">
+          <div class="number">32,000㎡</div>
+          <div class="label">Building Area</div>
+        </div>
+        <div class="company-stat">
+          <div class="number">20+</div>
+          <div class="label">Global Subsidiaries</div>
+        </div>
+        <div class="company-stat">
+          <div class="number">500+</div>
+          <div class="label">Product Types</div>
+        </div>
+      </div>
+      <p style="text-align: center; color: #666; font-size: 16px; line-height: 1.8;">
+        INSIZE Co., Ltd. is a leading measurement solution provider with decades of experience in precision metrology. 
+        We serve customers worldwide with innovative and reliable measuring instruments for quality control, production monitoring, 
+        and dimensional verification across diverse industries.
+      </p>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="section container">
+    <h2 class="section-title">Latest News & Case Studies</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">2026-03-31</div>
+          <h3>Scaling Production Through Precision</h3>
+          <p>How large CMM systems and digital data integration enhance machine automation efficiency for our Malaysian manufacturing partner.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">2026-03-23</div>
+          <h3>Precision in High-End Manufacturing</h3>
+          <p>Discover how INSIZE measurement solutions deliver micron-level precision for reliability in specialized manufacturing applications.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">2026-03-17</div>
+          <h3>Surface Quality Control Excellence</h3>
+          <p>Establishing dimensional and metallurgical testing laboratories for comprehensive surface quality assurance in hydraulic systems manufacturing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h2 class="section-title">Request Product Information</h2>
+      <form onsubmit="return sendMail(event)">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="fullname" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="contact">Phone / Email *</label>
+          <input type="text" id="contact" name="contact" placeholder="Example: +84901234567 or email@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Your company name" />
+        </div>
+        <div class="form-group">
+          <label for="product">Product of Interest *</label>
+          <select id="product" name="product" required>
+            <option value="">Select a product category</option>
+            <option value="Dimensional Metrology">Dimensional Metrology</option>
+            <option value="Testing Instruments">Testing Instruments</option>
+            <option value="3D Measurement">3D Measurement Systems</option>
+            <option value="Digital Solutions">Data & Software Solutions</option>
+            <option value="On-Machine Measurement">On-Machine Measurement</option>
+            <option value="Specialized Equipment">Specialized Equipment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message / Requirements</label>
+          <textarea id="message" name="message" placeholder="Describe your measurement needs or ask questions..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About INSIZE</h4>
+        <ul>
+          <li><a href="#">Company Profile</a></li>
+          <li><a href="#">History & Milestones</a></li>
+          <li><a href="#">Global Presence</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">Product Catalog</a></li>
+          <li><a href="products.html">New Products</a></li>
+          <li><a href="https://insize.com/">Technical Specs</a></li>
+          <li><a href="https://insize.com/">Operation Manuals</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Video Gallery</a></li>
+          <li><a href="#">3D Exhibition Hall</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Application Notes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p style="font-size: 13px; color: #aaa; margin-bottom: 16px;">
+          INSIZE Co., Ltd.<br>
+          80 Xiangyang Road<br>
+          Suzhou, China 215009<br><br>
+          <strong style="color: #fff;">services5@tecotec.com.vn</strong><br>
+          +86-512-68099993<br><br>
+          <strong style="color: #ff7a16;">Website:</strong><br>
+          <a href="https://website1.com" style="color: #ff7a16; text-decoration: none;">website1.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 INSIZE Co., Ltd. All rights reserved. | Precision Measurement Solutions for Global Manufacturing</p>
+    </div>
+  </footer>
+
+  <script>
+    function sendMail(event) {
+      event.preventDefault();
+      const form = event.target;
+      const fullname = form.fullname.value.trim();
+      const contact = form.contact.value.trim();
+      const company = form.company.value.trim();
+      const product = form.product.value;
+      const message = form.message.value.trim();
+      
+      const subject = encodeURIComponent('INSIZE Product Inquiry from Web Form');
+      const bodyLines = [
+        'Name: ' + fullname,
+        'Contact: ' + contact,
+        'Company: ' + (company || 'Not provided'),
+        'Product Category: ' + product,
+        'Message: ' + (message || 'No additional message')
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n\n'));
+      
+      window.location.href = 'mailto:services5@tecotec.com.vn?subject=' + subject + '&body=' + body;
+      return false;
+    }
+    d:\Minh\chuong-trinh
+python -m http.server 8000
+  </script>
+</body>
+</html>

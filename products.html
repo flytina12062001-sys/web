@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - INSIZE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #003d82;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #003d82;
+    }
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    .section-title {
+      text-align: left;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #003d82;
+    }
+    /* Category Navigation */
+    .category-nav {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .category-btn {
+      padding: 10px 20px;
+      border: 2px solid #003d82;
+      background: #fff;
+      color: #003d82;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    .category-btn:hover, .category-btn.active {
+      background: #003d82;
+      color: #fff;
+    }
+    /* Products Grid */
+    .products-list {
+      display: grid;
+      gap: 20px;
+    }
+    .product-item {
+      background: #fff;
+      border-left: 4px solid #003d82;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .product-item:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transform: translateX(4px);
+    }
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #003d82;
+      margin-bottom: 8px;
+    }
+    .product-code {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .product-link {
+      color: #ff7a16;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .product-link:hover {
+      color: #e56a05;
+      text-decoration: underline;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+    footer p {
+      color: #888;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="web.html" class="logo">NMM</a>
+      <nav>
+        <a href="web.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="web.html#company">Company</a>
+        <a href="web.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="section container">
+    <h2 class="section-title">Products</h2>
+    
+    <!-- Category Navigation -->
+    <div class="category-nav">
+      <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
+      <button class="category-btn" onclick="filterProducts('dimensional')">Dimensional Metrology</button>
+      <button class="category-btn" onclick="filterProducts('testing')">Testing Instruments</button>
+      <button class="category-btn" onclick="filterProducts('3d')">3D Measurement</button>
+      <button class="category-btn" onclick="filterProducts('data')">Data & Software</button>
+      <button class="category-btn" onclick="filterProducts('machine')">On-Machine Measurement</button>
+      <button class="category-btn" onclick="filterProducts('other')">Other Equipment</button>
+    </div>
+
+    <!-- Products List -->
+    <div class="products-list" id="productsList">
+      <!-- Dimensional Metrology -->
+      <div class="product-item" data-category="dimensional">
+        <div class="product-name">📏 Digital Calipers</div>
+        <div class="product-code">Code: ICP-001</div>
+        <div class="product-desc">High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="dimensional">
+        <div class="product-name">📏 Mechanical Micrometers</div>
+        <div class="product-code">Code: MIC-002</div>
+        <div class="product-desc">Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="dimensional">
+        <div class="product-name">📏 Height Gauges</div>
+        <div class="product-code">Code: HGE-003</div>
+        <div class="product-desc">Precision height gauges for measuring heights and step measurements with ceramic measuring surface</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="dimensional">
+        <div class="product-name">📏 Bore Gauges</div>
+        <div class="product-code">Code: BOR-004</div>
+        <div class="product-desc">Versatile bore gauges for measuring internal diameters with high accuracy and repeatability</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <!-- Testing Instruments -->
+      <div class="product-item" data-category="testing">
+        <div class="product-name">⚙️ Digital Hardness Testers</div>
+        <div class="product-code">Code: DHT-101</div>
+        <div class="product-desc">Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="testing">
+        <div class="product-name">⚙️ Flaw Detectors</div>
+        <div class="product-code">Code: FLD-102</div>
+        <div class="product-desc">Ultrasonic flaw detectors for non-destructive testing and defect identification in materials</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="testing">
+        <div class="product-name">⚙️ Force Gauges & Tension Meters</div>
+        <div class="product-code">Code: FGM-103</div>
+        <div class="product-desc">Digital force measurement instruments for tension, compression, and peel force testing</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="testing">
+        <div class="product-name">⚙️ Torque Testers & Wrenches</div>
+        <div class="product-code">Code: TRQ-104</div>
+        <div class="product-desc">Calibrated torque measuring instruments and torque wrenches for precise fastening control</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <!-- 3D Measurement -->
+      <div class="product-item" data-category="3d">
+        <div class="product-name">🔬 Vision Measuring Systems</div>
+        <div class="product-code">Code: VMS-201</div>
+        <div class="product-desc">Advanced optical measurement systems for 2D and 3D component measurement with software analysis</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="3d">
+        <div class="product-name">🔬 Profile Projectors</div>
+        <div class="product-code">Code: PPJ-202</div>
+        <div class="product-desc">Optical profile projectors for magnified inspection of complex part profiles and dimensions</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="3d">
+        <div class="product-name">🔬 Microscopes & Magnifiers</div>
+        <div class="product-code">Code: MIC-203</div>
+        <div class="product-desc">Stereo microscopes and digital magnifiers for detailed surface inspection and measurement</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <!-- Data & Software -->
+      <div class="product-item" data-category="data">
+        <div class="product-name">📊 Digital Data Output Systems</div>
+        <div class="product-code">Code: DDO-301</div>
+        <div class="product-desc">Wireless data collection modules for connecting measuring instruments to computers and tablets</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="data">
+        <div class="product-name">📊 Measurement Software</div>
+        <div class="product-code">Code: MES-302</div>
+        <div class="product-desc">Comprehensive software solutions for measurement data management, analysis, and quality reporting</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <!-- On-Machine Measurement -->
+      <div class="product-item" data-category="machine">
+        <div class="product-name">🏭 On-Machine Probe Systems</div>
+        <div class="product-code">Code: OMP-401</div>
+        <div class="product-desc">Real-time measurement probes for in-process inspection on CNC machines and production lines</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="machine">
+        <div class="product-name">🏭 Automatic Inspection Systems</div>
+        <div class="product-code">Code: AIS-402</div>
+        <div class="product-desc">Automated measurement solutions for high-volume production quality control and sorting</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <!-- Other Equipment -->
+      <div class="product-item" data-category="other">
+        <div class="product-name">🔧 Digital Scales & Balances</div>
+        <div class="product-code">Code: DSB-501</div>
+        <div class="product-desc">Precision digital weighing instruments for mass measurement in laboratories and production</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="other">
+        <div class="product-name">🔧 Pressure Gauges</div>
+        <div class="product-code">Code: PGE-502</div>
+        <div class="product-desc">Analog and digital pressure measurement instruments for various industrial applications</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+
+      <div class="product-item" data-category="other">
+        <div class="product-name">🔧 Electronic Levels</div>
+        <div class="product-code">Code: ELE-503</div>
+        <div class="product-desc">Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement</div>
+        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 INSIZE Co., Ltd. All rights reserved. | Precision Measurement Solutions</p>
+  </footer>
+
+  <script>
+    function filterProducts(category) {
+      const items = document.querySelectorAll('.product-item');
+      const buttons = document.querySelectorAll('.category-btn');
+      
+      // Update active button
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter products
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // Auto-filter based on URL parameter
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const category = urlParams.get('category');
+      
+      if (category) {
+        const buttons = document.querySelectorAll('.category-btn');
+        buttons.forEach(btn => {
+          if (btn.getAttribute('onclick').includes(`'${category}'`)) {
+            btn.click();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
