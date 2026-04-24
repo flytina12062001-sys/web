@@ -260,6 +260,144 @@
     .hidden {
       display: none;
     }
+    /* Product Detail Page */
+    .product-detail {
+      padding: 40px 20px;
+    }
+    .product-detail-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .detail-back {
+      margin-bottom: 30px;
+    }
+    .detail-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .detail-image {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      font-size: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+    .detail-info h2 {
+      font-size: 32px;
+      color: #003d82;
+      margin-bottom: 10px;
+    }
+    .detail-code {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-family: monospace;
+    }
+    .detail-specs {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    .detail-specs h4 {
+      color: #003d82;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .spec-item:last-child {
+      border-bottom: none;
+    }
+    .spec-label {
+      font-weight: 600;
+      color: #333;
+    }
+    .spec-value {
+      color: #666;
+    }
+    .detail-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .btn-download {
+      background: #003d82;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-download:hover {
+      background: #002855;
+    }
+    .btn-request {
+      background: #ff7a16;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn-request:hover {
+      background: #e56a05;
+    }
+    .detail-description {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid #e0e0e0;
+    }
+    .detail-description h3 {
+      color: #003d82;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+    .detail-description p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .detail-features {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    .detail-features h4 {
+      color: #003d82;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    .detail-features ul {
+      margin-left: 20px;
+      color: #666;
+    }
+    .detail-features li {
+      margin-bottom: 8px;
+    }
+    @media (max-width: 768px) {
+      .detail-header {
+        grid-template-columns: 1fr;
+      }
+    }
     /* Company Info Section */
     .company-section {
       background: #f0f5fa;
@@ -621,28 +759,28 @@
           <div class="product-name">📏 Digital Calipers</div>
           <div class="product-code">Code: ICP-001</div>
           <div class="product-desc">High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('ICP-001')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="dimensional">
           <div class="product-name">📏 Mechanical Micrometers</div>
           <div class="product-code">Code: MIC-002</div>
           <div class="product-desc">Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('MIC-002')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="dimensional">
           <div class="product-name">📏 Height Gauges</div>
           <div class="product-code">Code: HGE-003</div>
           <div class="product-desc">Precision height gauges for measuring heights and step measurements with ceramic measuring surface</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('HGE-003')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="dimensional">
           <div class="product-name">📏 Bore Gauges</div>
           <div class="product-code">Code: BOR-004</div>
           <div class="product-desc">Versatile bore gauges for measuring internal diameters with high accuracy and repeatability</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('BOR-004')" class="product-link">View Details →</a>
         </div>
 
         <!-- Testing Instruments -->
@@ -650,28 +788,28 @@
           <div class="product-name">⚙️ Digital Hardness Testers</div>
           <div class="product-code">Code: DHT-101</div>
           <div class="product-desc">Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('DHT-101')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="testing">
           <div class="product-name">⚙️ Flaw Detectors</div>
           <div class="product-code">Code: FLD-102</div>
           <div class="product-desc">Ultrasonic flaw detectors for non-destructive testing and defect identification in materials</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('FLD-102')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="testing">
           <div class="product-name">⚙️ Force Gauges & Tension Meters</div>
           <div class="product-code">Code: FGM-103</div>
           <div class="product-desc">Digital force measurement instruments for tension, compression, and peel force testing</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('FGM-103')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="testing">
           <div class="product-name">⚙️ Torque Testers & Wrenches</div>
           <div class="product-code">Code: TRQ-104</div>
           <div class="product-desc">Calibrated torque measuring instruments and torque wrenches for precise fastening control</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('TRQ-104')" class="product-link">View Details →</a>
         </div>
 
         <!-- 3D Measurement -->
@@ -679,21 +817,21 @@
           <div class="product-name">🔬 Vision Measuring Systems</div>
           <div class="product-code">Code: VMS-201</div>
           <div class="product-desc">Advanced optical measurement systems for 2D and 3D component measurement with software analysis</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('VMS-201')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="3d">
           <div class="product-name">🔬 Profile Projectors</div>
           <div class="product-code">Code: PPJ-202</div>
           <div class="product-desc">Optical profile projectors for magnified inspection of complex part profiles and dimensions</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('PPJ-202')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="3d">
           <div class="product-name">🔬 Microscopes & Magnifiers</div>
           <div class="product-code">Code: MIC-203</div>
           <div class="product-desc">Stereo microscopes and digital magnifiers for detailed surface inspection and measurement</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('MIC-203')" class="product-link">View Details →</a>
         </div>
 
         <!-- Data & Software -->
@@ -701,14 +839,14 @@
           <div class="product-name">📊 Digital Data Output Systems</div>
           <div class="product-code">Code: DDO-301</div>
           <div class="product-desc">Wireless data collection modules for connecting measuring instruments to computers and tablets</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('DDO-301')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="data">
           <div class="product-name">📊 Measurement Software</div>
           <div class="product-code">Code: MES-302</div>
           <div class="product-desc">Comprehensive software solutions for measurement data management, analysis, and quality reporting</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('MES-302')" class="product-link">View Details →</a>
         </div>
 
         <!-- On-Machine Measurement -->
@@ -716,14 +854,14 @@
           <div class="product-name">🏭 On-Machine Probe Systems</div>
           <div class="product-code">Code: OMP-401</div>
           <div class="product-desc">Real-time measurement probes for in-process inspection on CNC machines and production lines</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('OMP-401')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="machine">
           <div class="product-name">🏭 Automatic Inspection Systems</div>
           <div class="product-code">Code: AIS-402</div>
           <div class="product-desc">Automated measurement solutions for high-volume production quality control and sorting</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('AIS-402')" class="product-link">View Details →</a>
         </div>
 
         <!-- Other Equipment -->
@@ -731,27 +869,64 @@
           <div class="product-name">🔧 Digital Scales & Balances</div>
           <div class="product-code">Code: DSB-501</div>
           <div class="product-desc">Precision digital weighing instruments for mass measurement in laboratories and production</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('DSB-501')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="other">
           <div class="product-name">🔧 Pressure Gauges</div>
           <div class="product-code">Code: PGE-502</div>
           <div class="product-desc">Analog and digital pressure measurement instruments for various industrial applications</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('PGE-502')" class="product-link">View Details →</a>
         </div>
 
         <div class="product-item" data-category="other">
           <div class="product-name">🔧 Electronic Levels</div>
           <div class="product-code">Code: ELE-503</div>
           <div class="product-desc">Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement</div>
-          <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
+          <a onclick="showProductDetail('ELE-503')" class="product-link">View Details →</a>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- Product Detail Page -->
+  <div id="product-detail" class="page product-detail">
+    <div class="product-detail-container">
+      <div class="detail-back">
+        <button onclick="showPage('products')" class="btn btn-back">← Back to Products</button>
+      </div>
+      <div class="detail-header">
+        <div class="detail-image" id="detailIcon"></div>
+        <div class="detail-info">
+          <h2 id="detailName"></h2>
+          <div class="detail-code" id="detailCode"></div>
+          <div class="detail-specs">
+            <h4>Specifications</h4>
+            <div id="detailSpecs"></div>
+          </div>
+          <div class="detail-actions">
+            <button class="btn-download" onclick="downloadCatalog()">📥 Download Catalog</button>
+            <button class="btn-request" onclick="requestProduct()">📧 Request Information</button>
+          </div>
+        </div>
+      </div>
+      <div class="detail-description">
+        <h3>Product Description</h3>
+        <p id="detailDescription"></p>
+        <div class="detail-features">
+          <h4>Key Features</h4>
+          <ul id="detailFeatures"></ul>
+        </div>
+        <div class="detail-features">
+          <h4>Applications</h4>
+          <ul id="detailApplications"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
+  <footer>
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -879,6 +1054,559 @@
 
       window.location.href = 'mailto:services5@tecotec.com.vn?subject=' + subject + '&body=' + body;
       return false;
+    }
+
+    // Product Details Database
+    const productsDB = {
+      'ICP-001': {
+        name: 'Digital Calipers',
+        icon: '📏',
+        code: 'ICP-001',
+        category: 'Dimensional Metrology',
+        specs: {
+          'Range': '0-150mm',
+          'Resolution': '0.01mm',
+          'Accuracy': '±0.03mm',
+          'Display': 'LCD Digital'
+        },
+        description: 'High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm. Features stainless steel construction for durability and reliability in laboratory and workshop environments.',
+        features: [
+          'Large LCD display with automatic zeroing',
+          'Stainless steel hardened measuring surfaces',
+          'Battery powered with low battery indicator',
+          'Data hold function for convenient reading',
+          'Metric and inch conversion'
+        ],
+        applications: [
+          'Component dimensional verification',
+          'Quality control inspections',
+          'Manufacturing workshops',
+          'Research laboratories'
+        ],
+        catalog: 'catalogs/ICP-001-catalog.pdf'
+      },
+      'MIC-002': {
+        name: 'Mechanical Micrometers',
+        icon: '📏',
+        code: 'MIC-002',
+        category: 'Dimensional Metrology',
+        specs: {
+          'Range': '0-25mm',
+          'Resolution': '0.01mm',
+          'Accuracy': '±0.004mm',
+          'Type': 'Outside Micrometer'
+        },
+        description: 'Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use. Features carbide measuring surfaces for extended wear resistance.',
+        features: [
+          'Carbide-tipped measuring surfaces',
+          'Ratchet stop for consistent pressure',
+          'Rotating sleeve with friction thimble',
+          'Graduation marks for direct reading',
+          'Case hardened barrel'
+        ],
+        applications: [
+          'Precision part measurement',
+          'Material thickness gauging',
+          'Industrial quality control',
+          'Calibration work'
+        ],
+        catalog: 'catalogs/MIC-002-catalog.pdf'
+      },
+      'HGE-003': {
+        name: 'Height Gauges',
+        icon: '📏',
+        code: 'HGE-003',
+        category: 'Dimensional Metrology',
+        specs: {
+          'Range': '0-300mm',
+          'Resolution': '0.05mm',
+          'Base Size': '100x70mm',
+          'Measurement Surface': 'Ceramic'
+        },
+        description: 'Precision height gauges for measuring heights and step measurements with ceramic measuring surface. Ideal for layout work and component dimensioning.',
+        features: [
+          'Ceramic measuring surface resistant to scratching',
+          'Heavy base for stability',
+          'Fine adjustment mechanism',
+          'Clear graduation marks',
+          'Spring-loaded measuring head'
+        ],
+        applications: [
+          'Step measurement on flat surfaces',
+          'Layout and marking work',
+          'Component height verification',
+          'Precision surface measurement'
+        ],
+        catalog: 'catalogs/HGE-003-catalog.pdf'
+      },
+      'BOR-004': {
+        name: 'Bore Gauges',
+        icon: '📏',
+        code: 'BOR-004',
+        category: 'Dimensional Metrology',
+        specs: {
+          'Range': '6-35mm',
+          'Resolution': '0.01mm',
+          'Accuracy': '±0.025mm',
+          'Type': 'Mechanical Bore Gauge'
+        },
+        description: 'Versatile bore gauges for measuring internal diameters with high accuracy and repeatability. Features self-centering design for consistent measurements.',
+        features: [
+          'Self-centering mechanism',
+          'Hardened steel measuring contacts',
+          'Smooth operation with minimal friction',
+          'Easy zero setting',
+          'Replaceable measuring tips'
+        ],
+        applications: [
+          'Internal hole diameter measurement',
+          'Bearing bore verification',
+          'Precision component gauging',
+          'Assembly inspection'
+        ],
+        catalog: 'catalogs/BOR-004-catalog.pdf'
+      },
+      'DHT-101': {
+        name: 'Digital Hardness Testers',
+        icon: '⚙️',
+        code: 'DHT-101',
+        category: 'Testing Instruments',
+        specs: {
+          'Scales Supported': 'Brinell, Vickers, Rockwell',
+          'Display': 'LED Digital',
+          'Load Range': '10-3000kgf',
+          'Measurement Speed': '< 20 seconds'
+        },
+        description: 'Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control. Provides fast and accurate results with automatic indentation depth calculation.',
+        features: [
+          'Three hardness scales in one unit',
+          'Automatic load application and withdrawal',
+          'Large backlit LCD display',
+          'USB connectivity for data export',
+          'Built-in standards reference'
+        ],
+        applications: [
+          'Material quality assessment',
+          'Hardness verification in manufacturing',
+          'Material research and development',
+          'Incoming material inspection'
+        ],
+        catalog: 'catalogs/DHT-101-catalog.pdf'
+      },
+      'FLD-102': {
+        name: 'Flaw Detectors',
+        icon: '⚙️',
+        code: 'FLD-102',
+        category: 'Testing Instruments',
+        specs: {
+          'Technology': 'Ultrasonic',
+          'Frequency': '2.5MHz / 5MHz',
+          'Display': 'Digital LCD',
+          'Detection Range': 'Up to 5000mm'
+        },
+        description: 'Ultrasonic flaw detectors for non-destructive testing and defect identification in materials. Detects surface and subsurface defects with high precision.',
+        features: [
+          'Dual frequency for better detection',
+          'High resolution display',
+          'A-scan and B-scan modes',
+          'Data recording capability',
+          'Portable and lightweight design'
+        ],
+        applications: [
+          'Weld defect detection',
+          'Material integrity testing',
+          'Aircraft and automotive inspection',
+          'Pipeline integrity assessment'
+        ],
+        catalog: 'catalogs/FLD-102-catalog.pdf'
+      },
+      'FGM-103': {
+        name: 'Force Gauges & Tension Meters',
+        icon: '⚙️',
+        code: 'FGM-103',
+        category: 'Testing Instruments',
+        specs: {
+          'Measurement Range': '0-500N',
+          'Resolution': '0.1N',
+          'Accuracy': '±0.5% of reading',
+          'Display': 'LED Digital'
+        },
+        description: 'Digital force measurement instruments for tension, compression, and peel force testing. Perfect for quality control and material testing applications.',
+        features: [
+          'Peak hold function',
+          'Overload protection',
+          'Data output to computer',
+          'Multiple attachment options',
+          'Long battery life'
+        ],
+        applications: [
+          'Material tensile testing',
+          'Product durability assessment',
+          'Component force verification',
+          'Packaging seal strength testing'
+        ],
+        catalog: 'catalogs/FGM-103-catalog.pdf'
+      },
+      'TRQ-104': {
+        name: 'Torque Testers & Wrenches',
+        icon: '⚙️',
+        code: 'TRQ-104',
+        category: 'Testing Instruments',
+        specs: {
+          'Range': '5-250 Nm',
+          'Accuracy': '±4% of reading',
+          'Type': 'Click-type Adjustable',
+          'Scale': 'Dual scale (Nm/kgf·cm)'
+        },
+        description: 'Calibrated torque measuring instruments and torque wrenches for precise fastening control. Ensures proper bolt tension and equipment reliability.',
+        features: [
+          'Audible and tactile click indication',
+          'Easy-to-read graduation marks',
+          'Reversible for tightening and loosening',
+          'Durable hardened steel construction',
+          'Calibration certificate included'
+        ],
+        applications: [
+          'Fastener assembly control',
+          'Equipment maintenance',
+          'Automotive assembly',
+          'Industrial equipment installation'
+        ],
+        catalog: 'catalogs/TRQ-104-catalog.pdf'
+      },
+      'VMS-201': {
+        name: 'Vision Measuring Systems',
+        icon: '🔬',
+        code: 'VMS-201',
+        category: '3D Measurement',
+        specs: {
+          'Measurement Field': '100x75mm',
+          'Resolution': 'Up to 0.5 microns',
+          'Magnification': '100-600x',
+          'Software': 'Advanced imaging and analysis'
+        },
+        description: 'Advanced optical measurement systems for 2D and 3D component measurement with software analysis. Ideal for complex geometry inspection.',
+        features: [
+          'CCD camera with high resolution',
+          'LED ring illumination',
+          '3D measurement capability',
+          'Automated edge detection',
+          'SPC data collection'
+        ],
+        applications: [
+          'Complex component inspection',
+          'PCB and electronic assembly',
+          'Precision gear measurement',
+          'Medical device verification'
+        ],
+        catalog: 'catalogs/VMS-201-catalog.pdf'
+      },
+      'PPJ-202': {
+        name: 'Profile Projectors',
+        icon: '🔬',
+        code: 'PPJ-202',
+        category: '3D Measurement',
+        specs: {
+          'Screen Size': '250mm',
+          'Magnification': '10x, 20x, 50x optional',
+          'Stage Size': '150x100mm',
+          'Illumination': 'LED'
+        },
+        description: 'Optical profile projectors for magnified inspection of complex part profiles and dimensions. High magnification enables detailed surface inspection.',
+        features: [
+          'Large screen for easy viewing',
+          'Interchangeable lens modules',
+          'Rotating stage for profile tracing',
+          'Adjustable focus and zoom',
+          'LED illumination for clarity'
+        ],
+        applications: [
+          'Screw and thread inspection',
+          'Tool profile verification',
+          'Gear tooth checking',
+          'Complex contour measurement'
+        ],
+        catalog: 'catalogs/PPJ-202-catalog.pdf'
+      },
+      'MIC-203': {
+        name: 'Microscopes & Magnifiers',
+        icon: '🔬',
+        code: 'MIC-203',
+        category: '3D Measurement',
+        specs: {
+          'Magnification': '7x-45x',
+          'Working Distance': '110mm',
+          'Field of View': '16mm (at 10x)',
+          'Light Source': 'LED'
+        },
+        description: 'Stereo microscopes and digital magnifiers for detailed surface inspection and measurement. Perfect for quality control and defect detection.',
+        features: [
+          'Binocular viewing for depth perception',
+          'Variable magnification zoom',
+          'Incident and transmitted lighting',
+          'USB camera option available',
+          'Rotating stage for specimen positioning'
+        ],
+        applications: [
+          'Surface defect detection',
+          'Microassembly inspection',
+          'Solder joint examination',
+          'Material surface analysis'
+        ],
+        catalog: 'catalogs/MIC-203-catalog.pdf'
+      },
+      'DDO-301': {
+        name: 'Digital Data Output Systems',
+        icon: '📊',
+        code: 'DDO-301',
+        category: 'Data & Software',
+        specs: {
+          'Connection': 'Wireless 2.4GHz / USB',
+          'Range': 'Up to 100m (wireless)',
+          'Compatibility': 'All standard measuring tools',
+          'Data Storage': 'Internal memory 500+ readings'
+        },
+        description: 'Wireless data collection modules for connecting measuring instruments to computers and tablets. Streamlines measurement data capture and processing.',
+        features: [
+          'Wireless and wired connectivity options',
+          'Real-time data transmission',
+          'Automatic timestamp recording',
+          'Battery-powered receiver unit',
+          'Cross-platform compatibility'
+        ],
+        applications: [
+          'Production line data collection',
+          'Statistical process control',
+          'Quality documentation',
+          'Real-time monitoring'
+        ],
+        catalog: 'catalogs/DDO-301-catalog.pdf'
+      },
+      'MES-302': {
+        name: 'Measurement Software',
+        icon: '📊',
+        code: 'MES-302',
+        category: 'Data & Software',
+        specs: {
+          'Platform': 'Windows / Linux / Cloud',
+          'Database': 'SQL Server compatible',
+          'Reports': 'Customizable dashboards',
+          'Users': 'Multi-user with access control'
+        },
+        description: 'Comprehensive software solutions for measurement data management, analysis, and quality reporting. Integrates with production systems.',
+        features: [
+          'Real-time SPC charts',
+          'Automated report generation',
+          'Data trending and analysis',
+          'GD&T compliance checking',
+          'Email alert notifications'
+        ],
+        applications: [
+          'Manufacturing execution systems',
+          'Measurement data analysis',
+          'Quality assurance documentation',
+          'Regulatory compliance reporting'
+        ],
+        catalog: 'catalogs/MES-302-catalog.pdf'
+      },
+      'OMP-401': {
+        name: 'On-Machine Probe Systems',
+        icon: '🏭',
+        code: 'OMP-401',
+        category: 'On-Machine Measurement',
+        specs: {
+          'Measurement Range': '5-50mm',
+          'Accuracy': '±0.05mm',
+          'Response Time': '< 100ms',
+          'Interface': 'CNC compatible'
+        },
+        description: 'Real-time measurement probes for in-process inspection on CNC machines and production lines. Enables automatic part correction.',
+        features: [
+          'Integrated CNC communication',
+          'Fast measurement cycle',
+          'Automatic tolerance checking',
+          'Tool breakage detection',
+          'Wireless data transmission'
+        ],
+        applications: [
+          'CNC machine on-board inspection',
+          'Automatic part sorting',
+          'Tool offset compensation',
+          'Production efficiency improvement'
+        ],
+        catalog: 'catalogs/OMP-401-catalog.pdf'
+      },
+      'AIS-402': {
+        name: 'Automatic Inspection Systems',
+        icon: '🏭',
+        code: 'AIS-402',
+        category: 'On-Machine Measurement',
+        specs: {
+          'Throughput': '20-100 parts/min',
+          'Measurement Speed': '< 5 seconds per part',
+          'Accuracy': '±0.1mm',
+          'Data Recording': 'Real-time to server'
+        },
+        description: 'Automated measurement solutions for high-volume production quality control and sorting. Reduces labor costs and improves consistency.',
+        features: [
+          'High-speed vision camera system',
+          'Automated part positioning',
+          'Pass/fail sorting mechanism',
+          'Statistical analysis engine',
+          'Integration with ERP systems'
+        ],
+        applications: [
+          'High-volume production lines',
+          'Automated quality gates',
+          'Plastic and metal part inspection',
+          'Electronic component screening'
+        ],
+        catalog: 'catalogs/AIS-402-catalog.pdf'
+      },
+      'DSB-501': {
+        name: 'Digital Scales & Balances',
+        icon: '🔧',
+        code: 'DSB-501',
+        category: 'Specialized Tools',
+        specs: {
+          'Capacity': '300kg',
+          'Resolution': '0.1kg',
+          'Accuracy': '±0.2%',
+          'Display': 'LCD Digital'
+        },
+        description: 'Precision digital weighing instruments for mass measurement in laboratories and production. Features stainless steel platform for durability.',
+        features: [
+          'Stainless steel weighing platform',
+          'Tare function for container weight',
+          'Backlit display for clear reading',
+          'AC/Battery powered',
+          'Data output to computer'
+        ],
+        applications: [
+          'Material receiving inspection',
+          'Component mass verification',
+          'Laboratory measurement',
+          'Production batch weighing'
+        ],
+        catalog: 'catalogs/DSB-501-catalog.pdf'
+      },
+      'PGE-502': {
+        name: 'Pressure Gauges',
+        icon: '🔧',
+        code: 'PGE-502',
+        category: 'Specialized Tools',
+        specs: {
+          'Range': '0-250 bar',
+          'Class': 'Class 1.6',
+          'Connection': 'M20x1.5',
+          'Type': 'Analog glycerin filled'
+        },
+        description: 'Analog and digital pressure measurement instruments for various industrial applications. Glycerin-filled for shock resistance.',
+        features: [
+          'Glycerin-damped needle movement',
+          'Stainless steel case',
+          'Easy-to-read scale markings',
+          'Temperature compensated',
+          'Bottom or back connection'
+        ],
+        applications: [
+          'Hydraulic system monitoring',
+          'Pneumatic pressure control',
+          'Pump discharge pressure reading',
+          'Air compressor output monitoring'
+        ],
+        catalog: 'catalogs/PGE-502-catalog.pdf'
+      },
+      'ELE-503': {
+        name: 'Electronic Levels',
+        icon: '🔧',
+        code: 'ELE-503',
+        category: 'Specialized Tools',
+        specs: {
+          'Length': '600mm',
+          'Accuracy': '±0.5mm/m',
+          'Display': 'LCD Digital',
+          'Features': 'Bluetooth connectivity'
+        },
+        description: 'Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement. Perfect for modern installation and alignment work.',
+        features: [
+          'Digital angle measurement display',
+          'Bluetooth data transmission',
+          'Water-resistant design',
+          'Magnetic base included',
+          'Automatic calibration'
+        ],
+        applications: [
+          'Equipment installation and alignment',
+          'Structural leveling',
+          'Angle measurement',
+          'Precision surface setup'
+        ],
+        catalog: 'catalogs/ELE-503-catalog.pdf'
+      }
+    };
+
+    let currentProductCode = null;
+
+    function showProductDetail(productCode) {
+      currentProductCode = productCode;
+      const product = productsDB[productCode];
+      
+      if (!product) {
+        alert('Product not found');
+        return;
+      }
+
+      // Populate product details
+      document.getElementById('detailIcon').textContent = product.icon;
+      document.getElementById('detailName').textContent = product.name;
+      document.getElementById('detailCode').textContent = 'Product Code: ' + product.code;
+      document.getElementById('detailDescription').textContent = product.description;
+
+      // Populate specifications
+      let specsHTML = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        specsHTML += `<div class="spec-item"><span class="spec-label">${key}</span><span class="spec-value">${value}</span></div>`;
+      }
+      document.getElementById('detailSpecs').innerHTML = specsHTML;
+
+      // Populate features
+      let featuresHTML = '';
+      product.features.forEach(feature => {
+        featuresHTML += `<li>${feature}</li>`;
+      });
+      document.getElementById('detailFeatures').innerHTML = featuresHTML;
+
+      // Populate applications
+      let applicationsHTML = '';
+      product.applications.forEach(app => {
+        applicationsHTML += `<li>${app}</li>`;
+      });
+      document.getElementById('detailApplications').innerHTML = applicationsHTML;
+
+      // Show the detail page
+      showPage('product-detail');
+      window.scrollTo(0, 0);
+    }
+
+    function downloadCatalog() {
+      if (currentProductCode) {
+        const product = productsDB[currentProductCode];
+        if (product && product.catalog) {
+          // Simulated catalog download - in real scenario, link to actual PDF
+          alert('Catalog for ' + product.name + ' (Code: ' + product.code + ') will be downloaded shortly.\n\nIn production, this would download: ' + product.catalog);
+          // window.location.href = product.catalog;
+        }
+      }
+    }
+
+    function requestProduct() {
+      if (currentProductCode) {
+        const product = productsDB[currentProductCode];
+        const subject = encodeURIComponent('Product Inquiry: ' + product.name + ' (' + product.code + ')');
+        const body = encodeURIComponent('I am interested in the ' + product.name + ' (Code: ' + product.code + ').\n\nPlease provide more information about this product, including:\n- Pricing\n- Lead time\n- Technical specifications\n- Availability\n\nThank you.');
+        window.location.href = 'mailto:services5@tecotec.com.vn?subject=' + subject + '&body=' + body;
+      }
     }
   </script>
 </body>
