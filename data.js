@@ -14,7 +14,7 @@ const PRODUCTS = {
       id: 'ICP-001',
       name: 'Digital Calipers',
       category: 'dimensional',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><circle cx="100" cy="100" r="40" fill="%23ff6b35"/><rect x="60" y="95" width="80" height="10" fill="%2364b5f6"/></svg>',
       shortDescription: 'High-precision electronic calipers with LCD display for accurate measurements up to 0.01mm',
       specifications: {
         'Range': '0-150mm',
@@ -45,7 +45,7 @@ const PRODUCTS = {
       id: 'MIC-002',
       name: 'Mechanical Micrometers',
       category: 'dimensional',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="50" y="60" width="100" height="80" fill="%2364b5f6" stroke="%23ff6b35" stroke-width="3" rx="5"/><circle cx="100" cy="100" r="20" fill="%23ff6b35"/></svg>',
       shortDescription: 'Precision micrometers for exact measurement of small dimensions with carbide measuring surfaces',
       specifications: {
         'Range': '0-25mm',
@@ -76,7 +76,7 @@ const PRODUCTS = {
       id: 'HGE-003',
       name: 'Height Gauges',
       category: 'dimensional',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="80" y="40" width="40" height="120" fill="%2364b5f6"/><circle cx="100" cy="30" r="12" fill="%23ff6b35"/><line x1="60" y1="120" x2="140" y2="120" stroke="%23ff6b35" stroke-width="3"/></svg>',
       shortDescription: 'Precision height gauges with ceramic measuring surface for accurate height measurements',
       specifications: {
         'Range': '0-300mm',
@@ -107,7 +107,7 @@ const PRODUCTS = {
       id: 'BOR-004',
       name: 'Bore Gauges',
       category: 'dimensional',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><circle cx="100" cy="100" r="50" fill="none" stroke="%2364b5f6" stroke-width="8"/><circle cx="100" cy="100" r="25" fill="%23ff6b35" opacity="0.5"/><line x1="100" y1="50" x2="100" y2="150" stroke="%23ff6b35" stroke-width="2"/></svg>',
       shortDescription: 'Versatile bore gauges for measuring internal diameters with high accuracy',
       specifications: {
         'Range': '6-35mm',
@@ -139,7 +139,7 @@ const PRODUCTS = {
       id: 'DHT-101',
       name: 'Digital Hardness Testers',
       category: 'testing',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="40" y="30" width="120" height="140" fill="%2364b5f6" rx="10"/><rect x="50" y="40" width="100" height="60" fill="%23fff" stroke="%23ff6b35" stroke-width="2"/><circle cx="100" cy="150" r="15" fill="%23ff6b35"/><line x1="60" y1="60" x2="140" y2="60" stroke="%23ff6b35" stroke-width="1" opacity="0.5"/></svg>',
       shortDescription: 'Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales',
       specifications: {
         'Scales Supported': 'Brinell, Vickers, Rockwell, Leeb',
@@ -170,7 +170,7 @@ const PRODUCTS = {
       id: 'FLD-102',
       name: 'Ultrasonic Flaw Detectors',
       category: 'testing',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="50" y="50" width="100" height="100" fill="%2364b5f6" rx="8"/><circle cx="70" cy="70" r="8" fill="%23ff6b35"/><circle cx="130" cy="70" r="8" fill="%23ff6b35"/><polyline points="60,120 80,100 100,110 120,90 140,100" fill="none" stroke="%23ff6b35" stroke-width="2"/></svg>',
       shortDescription: 'Advanced ultrasonic flaw detectors for non-destructive testing and defect identification',
       specifications: {
         'Technology': 'Ultrasonic Pulse-Echo',
@@ -201,7 +201,7 @@ const PRODUCTS = {
       id: 'FGM-103',
       name: 'Force Gauges & Load Cells',
       category: 'testing',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="50" y="40" width="100" height="120" fill="%2364b5f6"/><line x1="100" y1="30" x2="100" y2="50" stroke="%23ff6b35" stroke-width="4"/><rect x="80" y="150" width="40" height="30" fill="%23ff6b35"/><text x="100" y="170" font-size="20" text-anchor="middle" fill="%23fff" font-weight="bold">N</text></svg>',
       shortDescription: 'Digital force measurement instruments for tension, compression, and peel force testing',
       specifications: {
         'Measurement Range': '0-500N',
@@ -232,7 +232,7 @@ const PRODUCTS = {
       id: 'TRQ-104',
       name: 'Torque Wrenches & Testers',
       category: 'testing',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><path d="M 60 100 Q 100 60 140 100" fill="none" stroke="%2364b5f6" stroke-width="15"/><circle cx="60" cy="100" r="8" fill="%23ff6b35"/><circle cx="140" cy="100" r="8" fill="%23ff6b35"/><path d="M 120 80 L 130 70 L 135 75" fill="%23ff6b35"/></svg>',
       shortDescription: 'Calibrated torque measuring instruments and wrenches for precise fastening control',
       specifications: {
         'Range': '5-250 Nm',
@@ -264,7 +264,7 @@ const PRODUCTS = {
       id: 'VMS-201',
       name: 'Vision Measuring Systems',
       category: 'optical',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="35" y="35" width="130" height="110" fill="%2364b5f6" rx="8" stroke="%23ff6b35" stroke-width="2"/><circle cx="100" cy="90" r="35" fill="none" stroke="%23ff6b35" stroke-width="2"/><circle cx="100" cy="90" r="20" fill="%23ff6b35" opacity="0.3"/><rect x="50" y="155" width="100" height="20" fill="%2364b5f6" rx="2"/></svg>',
       shortDescription: 'Advanced optical measurement systems for 2D and 3D component measurement with software analysis',
       specifications: {
         'Measurement Field': '100x75mm',
@@ -295,7 +295,7 @@ const PRODUCTS = {
       id: 'PPJ-202',
       name: 'Profile Projectors',
       category: 'optical',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="40" y="30" width="120" height="90" fill="%2364b5f6" rx="5"/><circle cx="60" cy="50" r="12" fill="%23ff6b35"/><path d="M 80 40 L 100 60 L 80 80 Z" fill="%23ff6b35" opacity="0.6"/><circle cx="100" cy="110" r="40" fill="none" stroke="%23ff6b35" stroke-width="2"/><line x1="70" y1="110" x2="130" y2="110" stroke="%23ff6b35" stroke-width="1" opacity="0.5"/></svg>',
       shortDescription: 'Optical profile projectors for magnified inspection of complex part profiles and dimensions',
       specifications: {
         'Screen Size': '250mm (10 inch)',
@@ -326,7 +326,7 @@ const PRODUCTS = {
       id: 'MIC-203',
       name: 'Stereo Microscopes',
       category: 'optical',
-      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="50" y="20" width="100" height="140" fill="%2364b5f6"/><circle cx="75" cy="40" r="15" fill="%23ff6b35"/><circle cx="125" cy="40" r="15" fill="%23ff6b35"/><rect x="45" y="110" width="110" height="50" fill="%23fff" opacity="0.3" stroke="%23ff6b35" stroke-width="2"/><rect x="70" y="160" width="60" height="20" fill="%23ff6b35"/></svg>',
       shortDescription: 'Stereo microscopes and digital magnifiers for detailed surface inspection and measurement',
       specifications: {
         'Magnification': '7x-45x variable zoom',
@@ -358,7 +358,7 @@ const PRODUCTS = {
       id: 'DDO-301',
       name: 'Data Collection Systems',
       category: 'software',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="40" y="40" width="120" height="100" fill="%2364b5f6" rx="8"/><rect x="50" y="50" width="100" height="35" fill="%23fff" stroke="%23ff6b35" stroke-width="1"/><circle cx="60" cy="100" r="6" fill="%23ff6b35"/><circle cx="80" cy="100" r="6" fill="%23ff6b35"/><circle cx="100" cy="100" r="6" fill="%23ff6b35"/><circle cx="120" cy="100" r="6" fill="%23ff6b35"/><circle cx="140" cy="100" r="6" fill="%23ff6b35"/><line x1="50" y1="120" x2="150" y2="120" stroke="%23ff6b35" stroke-width="2"/></svg>',
       shortDescription: 'Wireless data collection modules for connecting measuring instruments to computers and tablets',
       specifications: {
         'Connection': 'Wireless 2.4GHz / USB',
@@ -389,7 +389,7 @@ const PRODUCTS = {
       id: 'MES-302',
       name: 'Quality Management Software',
       category: 'software',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="30" y="30" width="140" height="100" fill="%2364b5f6" rx="5" stroke="%23ff6b35" stroke-width="2"/><polyline points="40,110 60,90 80,100 100,70 120,80 140,50" fill="none" stroke="%23ff6b35" stroke-width="2"/><circle cx="40" cy="110" r="3" fill="%23ff6b35"/><circle cx="140" cy="50" r="3" fill="%23ff6b35"/><rect x="50" y="140" width="20" height="40" fill="%23ff6b35" opacity="0.6"/><rect x="80" y="120" width="20" height="60" fill="%23ff6b35" opacity="0.8"/></svg>',
       shortDescription: 'Comprehensive software solutions for measurement data management, analysis, and quality reporting',
       specifications: {
         'Platform': 'Windows / Linux / Cloud',
@@ -421,7 +421,7 @@ const PRODUCTS = {
       id: 'OMP-401',
       name: 'On-Machine Probe Systems',
       category: 'machine',
-      image: 'https://images.unsplash.com/photo-1581092042-a2db4d83e2ff?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="60" y="20" width="80" height="100" fill="%2364b5f6" rx="8"/><circle cx="100" cy="50" r="20" fill="none" stroke="%23ff6b35" stroke-width="3"/><line x1="100" y1="35" x2="100" y2="20" stroke="%23ff6b35" stroke-width="2"/><path d="M 80 120 L 70 150 M 100 125 L 100 160 M 120 120 L 130 150" stroke="%23ff6b35" stroke-width="3" fill="none"/></svg>',
       shortDescription: 'Real-time measurement probes for in-process inspection on CNC machines and production lines',
       specifications: {
         'Measurement Range': '5-50mm',
@@ -452,7 +452,7 @@ const PRODUCTS = {
       id: 'AIS-402',
       name: 'Automatic Inspection Systems',
       category: 'machine',
-      image: 'https://images.unsplash.com/photo-1581092042-a2db4d83e2ff?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><rect x="30" y="35" width="140" height="95" fill="%2364b5f6" rx="5" stroke="%23ff6b35" stroke-width="2"/><circle cx="50" cy="55" r="10" fill="%23ff6b35"/><circle cx="100" cy="55" r="10" fill="%23ff6b35"/><circle cx="150" cy="55" r="10" fill="%23ff6b35"/><rect x="35" y="80" width="130" height="30" fill="%23fff" opacity="0.2"/><polyline points="40,135 65,120 90,130 115,110 140,125 160,115" fill="none" stroke="%23ff6b35" stroke-width="2"/></svg>',
       shortDescription: 'Automated measurement solutions for high-volume production quality control and sorting',
       specifications: {
         'Throughput': '20-100 parts/min',
@@ -484,7 +484,7 @@ const PRODUCTS = {
       id: 'DSB-501',
       name: 'Digital Scales',
       category: 'specialized',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="35" y="30" width="130" height="100" fill="%2364b5f6" rx="8"/><rect x="50" y="45" width="100" height="40" fill="%23fff" stroke="%23ff6b35" stroke-width="2"/><text x="100" y="75" font-size="28" text-anchor="middle" fill="%23ff6b35" font-weight="bold">88</text><rect x="45" y="110" width="110" height="15" fill="%23ff6b35" opacity="0.6"/><circle cx="65" cy="118" r="3" fill="%23fff"/><circle cx="135" cy="118" r="3" fill="%23fff"/></svg>',
       shortDescription: 'Precision digital weighing instruments for mass measurement in laboratories and production',
       specifications: {
         'Capacity': '300kg',
@@ -515,7 +515,7 @@ const PRODUCTS = {
       id: 'PGE-502',
       name: 'Pressure Gauges',
       category: 'specialized',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23154a9c" width="200" height="200"/><circle cx="100" cy="100" r="60" fill="%2364b5f6" stroke="%23ff6b35" stroke-width="3"/><circle cx="100" cy="100" r="50" fill="none" stroke="%23fff" stroke-width="1" opacity="0.3"/><line x1="100" y1="70" x2="100" y2="55" stroke="%23ff6b35" stroke-width="3"/><path d="M 100 100 L 130 90" stroke="%23ff6b35" stroke-width="2" stroke-linecap="round"/><text x="100" y="130" font-size="14" text-anchor="middle" fill="%23ff6b35">0-250 bar</text></svg>',
       shortDescription: 'Analog and digital pressure measurement instruments for various industrial applications',
       specifications: {
         'Range': '0-250 bar',
@@ -546,7 +546,7 @@ const PRODUCTS = {
       id: 'ELE-503',
       name: 'Digital Levels',
       category: 'specialized',
-      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
+      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%230b2c5f" width="200" height="200"/><rect x="30" y="70" width="140" height="30" fill="%2364b5f6" rx="5" stroke="%23ff6b35" stroke-width="2"/><circle cx="60" cy="85" r="8" fill="%23ff6b35"/><circle cx="100" cy="85" r="8" fill="%23ff6b35"/><circle cx="140" cy="85" r="8" fill="%23ff6b35"/><rect x="50" y="50" width="100" height="15" fill="%23fff" stroke="%23ff6b35" stroke-width="1"/><line x1="90" y1="55" x2="110" y2="55" stroke="%23ff6b35" stroke-width="2"/><polyline points="40,130 80,125 120,130 160,125" fill="none" stroke="%23ff6b35" stroke-width="2" opacity="0.6"/></svg>',
       shortDescription: 'Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement',
       specifications: {
         'Length': '600mm',
