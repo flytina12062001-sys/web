@@ -99,12 +99,17 @@
     .product-image-section {
       background: linear-gradient(135deg, #0b2c5f 0%, #154a9c 100%);
       border-radius: 8px;
-      padding: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 6rem;
       min-height: 300px;
+      overflow: hidden;
+    }
+    
+    .product-image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .product-info-section h1 {
