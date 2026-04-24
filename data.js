@@ -14,7 +14,7 @@ const PRODUCTS = {
       id: 'ICP-001',
       name: 'Digital Calipers',
       category: 'dimensional',
-      image: '📏',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'High-precision electronic calipers with LCD display for accurate measurements up to 0.01mm',
       specifications: {
         'Range': '0-150mm',
@@ -39,13 +39,13 @@ const PRODUCTS = {
         'Research laboratories',
         'Product measurement'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=ICP-001+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/ICP-001-catalog.pdf'
     },
     {
       id: 'MIC-002',
       name: 'Mechanical Micrometers',
       category: 'dimensional',
-      image: '📏',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Precision micrometers for exact measurement of small dimensions with carbide measuring surfaces',
       specifications: {
         'Range': '0-25mm',
@@ -70,13 +70,13 @@ const PRODUCTS = {
         'Calibration work',
         'Laboratory measurements'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=MIC-002+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/MIC-002-catalog.pdf'
     },
     {
       id: 'HGE-003',
       name: 'Height Gauges',
       category: 'dimensional',
-      image: '📏',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Precision height gauges with ceramic measuring surface for accurate height measurements',
       specifications: {
         'Range': '0-300mm',
@@ -101,13 +101,13 @@ const PRODUCTS = {
         'Precision surface measurement',
         'Machine tool setup'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=HGE-003+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/HGE-003-catalog.pdf'
     },
     {
       id: 'BOR-004',
       name: 'Bore Gauges',
       category: 'dimensional',
-      image: '📏',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Versatile bore gauges for measuring internal diameters with high accuracy',
       specifications: {
         'Range': '6-35mm',
@@ -132,14 +132,14 @@ const PRODUCTS = {
         'Assembly inspection',
         'Quality control'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=BOR-004+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/BOR-004-catalog.pdf'
     },
     // Testing Instruments
     {
       id: 'DHT-101',
       name: 'Digital Hardness Testers',
       category: 'testing',
-      image: '⚙️',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales',
       specifications: {
         'Scales Supported': 'Brinell, Vickers, Rockwell, Leeb',
@@ -164,13 +164,13 @@ const PRODUCTS = {
         'Incoming material inspection',
         'Product certification testing'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=DHT-101+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/DHT-101-catalog.pdf'
     },
     {
       id: 'FLD-102',
       name: 'Ultrasonic Flaw Detectors',
       category: 'testing',
-      image: '⚙️',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Advanced ultrasonic flaw detectors for non-destructive testing and defect identification',
       specifications: {
         'Technology': 'Ultrasonic Pulse-Echo',
@@ -195,13 +195,13 @@ const PRODUCTS = {
         'Pipeline integrity assessment',
         'Railroad rail inspection'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=FLD-102+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/FLD-102-catalog.pdf'
     },
     {
       id: 'FGM-103',
       name: 'Force Gauges & Load Cells',
       category: 'testing',
-      image: '⚙️',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Digital force measurement instruments for tension, compression, and peel force testing',
       specifications: {
         'Measurement Range': '0-500N',
@@ -226,13 +226,13 @@ const PRODUCTS = {
         'Packaging seal strength testing',
         'Material property evaluation'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=FGM-103+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/FGM-103-catalog.pdf'
     },
     {
       id: 'TRQ-104',
       name: 'Torque Wrenches & Testers',
       category: 'testing',
-      image: '⚙️',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Calibrated torque measuring instruments and wrenches for precise fastening control',
       specifications: {
         'Range': '5-250 Nm',
@@ -257,14 +257,14 @@ const PRODUCTS = {
         'Industrial equipment installation',
         'Precision assembly work'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=TRQ-104+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/TRQ-104-catalog.pdf'
     },
     // Optical Measurement
     {
       id: 'VMS-201',
       name: 'Vision Measuring Systems',
       category: 'optical',
-      image: '🔬',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Advanced optical measurement systems for 2D and 3D component measurement with software analysis',
       specifications: {
         'Measurement Field': '100x75mm',
@@ -289,13 +289,13 @@ const PRODUCTS = {
         'Medical device verification',
         'Tool and die inspection'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=VMS-201+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/VMS-201-catalog.pdf'
     },
     {
       id: 'PPJ-202',
       name: 'Profile Projectors',
       category: 'optical',
-      image: '🔬',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Optical profile projectors for magnified inspection of complex part profiles and dimensions',
       specifications: {
         'Screen Size': '250mm (10 inch)',
@@ -320,13 +320,13 @@ const PRODUCTS = {
         'Complex contour measurement',
         'Precision part inspection'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=PPJ-202+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/PPJ-202-catalog.pdf'
     },
     {
       id: 'MIC-203',
       name: 'Stereo Microscopes',
       category: 'optical',
-      image: '🔬',
+      image: 'https://images.unsplash.com/photo-1581092162692-8644c3709afe?w=500&h=500&fit=crop',
       shortDescription: 'Stereo microscopes and digital magnifiers for detailed surface inspection and measurement',
       specifications: {
         'Magnification': '7x-45x variable zoom',
@@ -351,14 +351,14 @@ const PRODUCTS = {
         'Material surface analysis',
         'Jewelry and coin inspection'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=MIC-203+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/MIC-203-catalog.pdf'
     },
     // Data & Software
     {
       id: 'DDO-301',
       name: 'Data Collection Systems',
       category: 'software',
-      image: '📊',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop',
       shortDescription: 'Wireless data collection modules for connecting measuring instruments to computers and tablets',
       specifications: {
         'Connection': 'Wireless 2.4GHz / USB',
@@ -383,13 +383,13 @@ const PRODUCTS = {
         'Real-time monitoring',
         'Paperless quality management'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=DDO-301+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/DDO-301-catalog.pdf'
     },
     {
       id: 'MES-302',
       name: 'Quality Management Software',
       category: 'software',
-      image: '📊',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop',
       shortDescription: 'Comprehensive software solutions for measurement data management, analysis, and quality reporting',
       specifications: {
         'Platform': 'Windows / Linux / Cloud',
@@ -414,14 +414,14 @@ const PRODUCTS = {
         'Regulatory compliance reporting',
         'Supply chain quality management'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=MES-302+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/MES-302-catalog.pdf'
     },
     // On-Machine Measurement
     {
       id: 'OMP-401',
       name: 'On-Machine Probe Systems',
       category: 'machine',
-      image: '🏭',
+      image: 'https://images.unsplash.com/photo-1581092042-a2db4d83e2ff?w=500&h=500&fit=crop',
       shortDescription: 'Real-time measurement probes for in-process inspection on CNC machines and production lines',
       specifications: {
         'Measurement Range': '5-50mm',
@@ -446,13 +446,13 @@ const PRODUCTS = {
         'Production efficiency improvement',
         'In-process quality control'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=OMP-401+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/OMP-401-catalog.pdf'
     },
     {
       id: 'AIS-402',
       name: 'Automatic Inspection Systems',
       category: 'machine',
-      image: '🏭',
+      image: 'https://images.unsplash.com/photo-1581092042-a2db4d83e2ff?w=500&h=500&fit=crop',
       shortDescription: 'Automated measurement solutions for high-volume production quality control and sorting',
       specifications: {
         'Throughput': '20-100 parts/min',
@@ -477,14 +477,14 @@ const PRODUCTS = {
         'Electronic component screening',
         'Defect sorting and traceability'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=AIS-402+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/AIS-402-catalog.pdf'
     },
     // Specialized Equipment
     {
       id: 'DSB-501',
       name: 'Digital Scales',
       category: 'specialized',
-      image: '🔧',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Precision digital weighing instruments for mass measurement in laboratories and production',
       specifications: {
         'Capacity': '300kg',
@@ -509,13 +509,13 @@ const PRODUCTS = {
         'Production batch weighing',
         'Ingredient batching'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=DSB-501+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/DSB-501-catalog.pdf'
     },
     {
       id: 'PGE-502',
       name: 'Pressure Gauges',
       category: 'specialized',
-      image: '🔧',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Analog and digital pressure measurement instruments for various industrial applications',
       specifications: {
         'Range': '0-250 bar',
@@ -540,13 +540,13 @@ const PRODUCTS = {
         'Air compressor output monitoring',
         'System pressure verification'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=PGE-502+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/PGE-502-catalog.pdf'
     },
     {
       id: 'ELE-503',
       name: 'Digital Levels',
       category: 'specialized',
-      image: '🔧',
+      image: 'https://images.unsplash.com/photo-1581092056-0c4c3acd3789?w=500&h=500&fit=crop',
       shortDescription: 'Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement',
       specifications: {
         'Length': '600mm',
@@ -571,7 +571,7 @@ const PRODUCTS = {
         'Precision surface setup',
         'Machinery alignment'
       ],
-      catalogPdf: 'https://via.placeholder.com/300x400?text=ELE-503+Catalog'
+      catalogPdf: 'https://assets.insize.com/catalogs/ELE-503-catalog.pdf'
     }
   ]
 };
