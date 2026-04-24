@@ -482,7 +482,8 @@
       currentProduct = product;
 
       // Populate product details
-      document.getElementById('productImage').textContent = product.image;
+      const productImageDiv = document.getElementById('productImage');
+      productImageDiv.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;" />`;
       document.getElementById('productName').textContent = product.name;
       document.getElementById('productModel').textContent = `Model: ${product.id}`;
       document.getElementById('productShortDesc').textContent = product.shortDescription;
