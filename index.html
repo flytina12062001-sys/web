@@ -1,573 +1,256 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NMM - Precision Measuring Tools & Metrology Instruments</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precision Measuring Tools - Industrial Metrology Solutions</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: '"'"'Segoe UI'"'"', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       line-height: 1.6;
-      background: #f8f9fa;
+      background: #f5f5f5;
     }
+
     /* Header */
     header {
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
+      background: #0b2c5f;
+      color: white;
+      padding: 1.5rem 0;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .header-content {
+
+    .header-container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
     }
+
     .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: #003d82;
-      letter-spacing: -0.5px;
-      cursor: pointer;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
-    nav {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+
     nav a {
+      color: white;
       text-decoration: none;
-      color: #333;
-      font-size: 14px;
+      margin-left: 2rem;
+      transition: color 0.3s;
       font-weight: 500;
-      transition: color 0.3s ease;
-      cursor: pointer;
     }
-    nav a:hover, nav a.active {
-      color: #003d82;
+
+    nav a:hover {
+      color: #64b5f6;
     }
+
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
-      color: #fff;
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #0b2c5f 0%, #154a9c 100%);
+      color: white;
+      padding: 6rem 2rem;
       text-align: center;
     }
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
-      font-weight: 700;
     }
+
     .hero p {
-      font-size: 18px;
-      margin-bottom: 32px;
-      opacity: 0.95;
-      line-height: 1.8;
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
     }
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 14px 32px;
-      border-radius: 6px;
-      border: none;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
+
+    .hero-btn {
       display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
-    .btn-primary {
-      background: #ff7a16;
-      color: #fff;
+
+    .hero-btn:hover {
+      background: #e55a2b;
     }
-    .btn-primary:hover {
-      background: #e56a05;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255, 122, 16, 0.3);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      border: 2px solid #fff;
-    }
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    .btn-back {
-      background: #666;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .btn-back:hover {
-      background: #555;
-      transform: translateY(-1px);
-    }
-    /* Main Content */
+
+    /* Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 2rem;
     }
-    /* Page Management */
-    .page {
-      display: none;
-    }
-    .page.active {
-      display: block;
-    }
-    /* Products Section */
-    .section {
-      padding: 80px 20px;
-    }
+
+    /* Section Title */
     .section-title {
       text-align: center;
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 50px;
-      color: #003d82;
+      font-size: 2.5rem;
+      margin: 3rem 0 2rem;
+      color: #0b2c5f;
     }
+
     .section-subtitle {
       text-align: center;
       color: #666;
-      font-size: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
     }
-    .products-grid {
+
+    /* Categories Grid */
+    .categories-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
+      gap: 2rem;
+      margin: 3rem 0;
     }
-    .product-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 28px 20px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      cursor: pointer;
-    }
-    .product-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      transform: translateY(-4px);
-      border-color: #003d82;
-    }
-    .product-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
-    .product-card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: #003d82;
-    }
-    .product-card p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    /* Products Page */
-    .category-nav {
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .category-btn {
-      padding: 10px 20px;
-      border: 2px solid #003d82;
-      background: #fff;
-      color: #003d82;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 14px;
-    }
-    .category-btn:hover, .category-btn.active {
-      background: #003d82;
-      color: #fff;
-    }
-    .products-list {
-      display: grid;
-      gap: 20px;
-    }
-    .product-item {
-      background: #fff;
-      border-left: 4px solid #003d82;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .product-item:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      transform: translateX(4px);
-    }
-    .product-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: #003d82;
-      margin-bottom: 8px;
-    }
-    .product-code {
-      color: #999;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-    .product-desc {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-    .product-link {
-      color: #ff7a16;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
-    .product-link:hover {
-      color: #e56a05;
-      text-decoration: underline;
-    }
-    .hidden {
-      display: none;
-    }
-    /* Product Detail Page */
-    .product-detail {
-      padding: 40px 20px;
-    }
-    .product-detail-container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .detail-back {
-      margin-bottom: 30px;
-    }
-    .detail-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .detail-image {
-      background: #f0f0f0;
-      border-radius: 8px;
-      padding: 40px;
-      text-align: center;
-      font-size: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-    }
-    .detail-info h2 {
-      font-size: 32px;
-      color: #003d82;
-      margin-bottom: 10px;
-    }
-    .detail-code {
-      color: #999;
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-family: monospace;
-    }
-    .detail-specs {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 6px;
-      margin: 20px 0;
-    }
-    .detail-specs h4 {
-      color: #003d82;
-      margin-bottom: 12px;
-      font-size: 16px;
-    }
-    .spec-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #e0e0e0;
-    }
-    .spec-item:last-child {
-      border-bottom: none;
-    }
-    .spec-label {
-      font-weight: 600;
-      color: #333;
-    }
-    .spec-value {
-      color: #666;
-    }
-    .detail-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .btn-download {
-      background: #003d82;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-download:hover {
-      background: #002855;
-    }
-    .btn-request {
-      background: #ff7a16;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .btn-request:hover {
-      background: #e56a05;
-    }
-    .detail-description {
-      margin-top: 40px;
-      padding-top: 40px;
-      border-top: 2px solid #e0e0e0;
-    }
-    .detail-description h3 {
-      color: #003d82;
-      margin-bottom: 16px;
-      font-size: 20px;
-    }
-    .detail-description p {
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-    .detail-features {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 6px;
-      margin: 20px 0;
-    }
-    .detail-features h4 {
-      color: #003d82;
-      margin-bottom: 12px;
-      font-size: 16px;
-    }
-    .detail-features ul {
-      margin-left: 20px;
-      color: #666;
-    }
-    .detail-features li {
-      margin-bottom: 8px;
-    }
-    @media (max-width: 768px) {
-      .detail-header {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* Company Info Section */
-    .company-section {
-      background: #f0f5fa;
-    }
-    .company-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .company-stat {
-      text-align: center;
-    }
-    .company-stat .number {
-      font-size: 42px;
-      font-weight: 700;
-      color: #003d82;
-      margin-bottom: 8px;
-    }
-    .company-stat .label {
-      color: #666;
-      font-size: 16px;
-    }
-    /* News Section */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
-    .news-card {
-      background: #fff;
+
+    .category-card {
+      background: white;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
     }
-    .news-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      transform: translateY(-4px);
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
-    .news-content {
-      padding: 24px;
+
+    .category-icon {
+      background: linear-gradient(135deg, #0b2c5f 0%, #154a9c 100%);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      font-size: 3rem;
     }
-    .news-date {
-      color: #999;
-      font-size: 13px;
-      margin-bottom: 12px;
+
+    .category-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-    .news-card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: #003d82;
-      line-height: 1.4;
+
+    .category-content h3 {
+      color: #0b2c5f;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
     }
-    .news-card p {
+
+    .category-content p {
       color: #666;
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
-    /* Contact Form Section */
-    .contact-section {
-      background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
-      color: #fff;
-      padding: 80px 20px;
+
+    .category-link {
+      color: #154a9c;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
     }
-    .contact-container {
-      max-width: 600px;
-      margin: 0 auto;
+
+    .category-link:hover {
+      color: #ff6b35;
     }
-    .contact-section .section-title {
-      color: #fff;
-    }
-    .form-group {
-      margin-bottom: 24px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 6px;
-      font-size: 14px;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-family: inherit;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255,255,255,0.6);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #ff7a16;
-      background: rgba(255,255,255,0.15);
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .form-group select {
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-      background-size: 20px;
-      padding-right: 40px;
-    }
+
     /* Footer */
     footer {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 60px 20px 30px;
+      background: #0b2c5f;
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 5rem;
     }
-    .footer-content {
+
+    .footer-container {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
+      gap: 2rem;
     }
+
     .footer-section h4 {
-      margin-bottom: 20px;
-      font-size: 16px;
+      margin-bottom: 1rem;
+      color: #64b5f6;
     }
+
     .footer-section ul {
       list-style: none;
     }
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
+
     .footer-section a {
-      color: #aaa;
+      color: #ccc;
       text-decoration: none;
-      font-size: 14px;
-      transition: color 0.3s ease;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
     }
+
     .footer-section a:hover {
-      color: #ff7a16;
+      color: white;
     }
+
     .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 30px;
       text-align: center;
-      color: #888;
-      font-size: 13px;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #444;
+      color: #999;
     }
+
     @media (max-width: 768px) {
-      nav {
-        gap: 16px;
+      .hero h1 {
+        font-size: 2rem;
       }
-      nav a {
-        font-size: 13px;
+
+      .hero p {
+        font-size: 1rem;
       }
-      .hero-buttons {
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-container {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
       }
-      .btn {
-        width: 100%;
-        max-width: 300px;
+
+      nav a {
+        margin-left: 1rem;
       }
     }
   </style>
@@ -575,1039 +258,134 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="header-content">
-      <div class="logo" onclick="showPage('home')">NMM</div>
+    <div class="header-container">
+      <div class="logo">PRECISION TOOLS</div>
       <nav>
-        <a onclick="showPage('home')" class="active">Home</a>
-        <a onclick="showPage('products')">Products</a>
-        <a onclick="showPage('company')">Company</a>
-        <a onclick="showPage('contact')">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="#categories">Products</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Home Page -->
-  <div id="home" class="page active">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Precision Measuring Tools & Metrology Instruments</h1>
-        <p>Comprehensive solution provider of precision measurement instruments for dimensional metrology, testing, and quality control</p>
-        <div class="hero-buttons">
-          <a onclick="showPage('contact')" class="btn btn-primary">Request Information</a>
-          <a onclick="showPage('products')" class="btn btn-secondary">Explore Products</a>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Precision Measuring Tools & Metrology Solutions</h1>
+    <p>Comprehensive industrial measurement instruments for dimensional metrology, testing, and quality control</p>
+    <a href="products.html" class="hero-btn">Explore Products</a>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Categories Section -->
+    <section id="categories">
+      <h2 class="section-title">Product Categories</h2>
+      <p class="section-subtitle">Browse our comprehensive range of precision measuring instruments</p>
+      
+      <div class="categories-grid">
+        <a href="products.html?category=dimensional" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>Dimensional Metrology</h3>
+            <p>Calipers, micrometers, height gauges, and precision dimensional measurement tools</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=testing" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>Testing Instruments</h3>
+            <p>Hardness testers, force gauges, torque measurement, and material testing equipment</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=optical" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>Optical Measurement</h3>
+            <p>Vision systems, profile projectors, microscopes, and optical inspection tools</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=software" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>Data & Software</h3>
+            <p>Measurement software, data collection systems, and quality management solutions</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=machine" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>On-Machine Measurement</h3>
+            <p>In-process inspection systems, CNC probes, and automated measurement solutions</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=specialized" class="category-card">
+          <div class="category-icon">??</div>
+          <div class="category-content">
+            <h3>Specialized Equipment</h3>
+            <p>Pressure gauges, scales, levels, and specialized industrial measurement tools</p>
+            <span class="category-link">View Products ?</span>
+          </div>
+        </a>
       </div>
     </section>
-
-    <!-- Products Section -->
-    <section class="section container">
-      <h2 class="section-title">Our Product Categories</h2>
-      <p class="section-subtitle">Extensive range of precision measuring and testing instruments</p>
-      <div class="products-grid">
-        <div class="product-card" onclick="showProducts('dimensional')">
-          <div class="product-icon">📏</div>
-          <h3>Dimensional Metrology</h3>
-          <p>Calipers, micrometers, height gauges, and bore gauges for precise dimensional measurements</p>
-        </div>
-        <div class="product-card" onclick="showProducts('testing')">
-          <div class="product-icon">⚙️</div>
-          <h3>Testing Instruments</h3>
-          <p>Hardness testers, flaw detectors, force gauges, and torque measurement tools</p>
-        </div>
-        <div class="product-card" onclick="showProducts('3d')">
-          <div class="product-icon">🔬</div>
-          <h3>3D Measurement</h3>
-          <p>Vision measuring systems, profile projectors, and advanced measurement solutions</p>
-        </div>
-        <div class="product-card" onclick="showProducts('data')">
-          <div class="product-icon">📊</div>
-          <h3>Data & Software</h3>
-          <p>Digital output systems and software solutions for measurement data management</p>
-        </div>
-        <div class="product-card" onclick="showProducts('machine')">
-          <div class="product-icon">🏭</div>
-          <h3>On-Machine Measurement</h3>
-          <p>Solutions for in-process inspection and on-machine measurement systems</p>
-        </div>
-        <div class="product-card" onclick="showProducts('other')">
-          <div class="product-icon">🔧</div>
-          <h3>Specialized Tools</h3>
-          <p>Scales, balances, pressure gauges, and environmental testing equipment</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Company Section -->
-    <section id="company" class="section company-section">
-      <div class="container">
-        <h2 class="section-title">NMM At A Glance</h2>
-        <div class="company-grid">
-          <div class="company-stat">
-            <div class="number">1995</div>
-            <div class="label">Founded</div>
-          </div>
-          <div class="company-stat">
-            <div class="number">32,000㎡</div>
-            <div class="label">Building Area</div>
-          </div>
-          <div class="company-stat">
-            <div class="number">20+</div>
-            <div class="label">Global Subsidiaries</div>
-          </div>
-          <div class="company-stat">
-            <div class="number">500+</div>
-            <div class="label">Product Types</div>
-          </div>
-        </div>
-        <p style="text-align: center; color: #666; font-size: 16px; line-height: 1.8;">
-          NMM Co., Ltd. is a leading measurement solution provider with decades of experience in precision metrology.
-          We serve customers worldwide with innovative and reliable measuring instruments for quality control, production monitoring,
-          and dimensional verification across diverse industries.
-        </p>
-      </div>
-    </section>
-
-    <!-- News Section -->
-    <section class="section container">
-      <h2 class="section-title">Latest News & Case Studies</h2>
-      <div class="news-grid">
-        <div class="news-card">
-          <div class="news-content">
-            <div class="news-date">2026-03-31</div>
-            <h3>Scaling Production Through Precision</h3>
-            <p>How large CMM systems and digital data integration enhance machine automation efficiency for our Malaysian manufacturing partner.</p>
-          </div>
-        </div>
-        <div class="news-card">
-          <div class="news-content">
-            <div class="news-date">2026-03-23</div>
-            <h3>Precision in High-End Manufacturing</h3>
-            <p>Discover how NMM measurement solutions deliver micron-level precision for reliability in specialized manufacturing applications.</p>
-          </div>
-        </div>
-        <div class="news-card">
-          <div class="news-content">
-            <div class="news-date">2026-03-17</div>
-            <h3>Surface Quality Control Excellence</h3>
-            <p>Establishing dimensional and metallurgical testing laboratories for comprehensive surface quality assurance in hydraulic systems manufacturing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <h2 class="section-title">Request Product Information</h2>
-        <form onsubmit="return sendMail(event)">
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="fullname" placeholder="Enter your full name" required />
-          </div>
-          <div class="form-group">
-            <label for="contact">Phone / Email *</label>
-            <input type="text" id="contact" name="contact" placeholder="Example: +84901234567 or email@domain.com" required />
-          </div>
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Your company name" />
-          </div>
-          <div class="form-group">
-            <label for="product">Product of Interest *</label>
-            <select id="product" name="product" required>
-              <option value="">Select a product category</option>
-              <option value="Dimensional Metrology">Dimensional Metrology</option>
-              <option value="Testing Instruments">Testing Instruments</option>
-              <option value="3D Measurement">3D Measurement Systems</option>
-              <option value="Digital Solutions">Data & Software Solutions</option>
-              <option value="On-Machine Measurement">On-Machine Measurement</option>
-              <option value="Specialized Equipment">Specialized Equipment</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message / Requirements</label>
-            <textarea id="message" name="message" placeholder="Describe your measurement needs or ask questions..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-        </form>
-      </div>
-    </section>
-  </div>
-
-  <!-- Products Page -->
-  <div id="products" class="page">
-    <section class="section container">
-      <button onclick="showPage('home')" class="btn btn-back">← Back to Home</button>
-      <h2 class="section-title">Products</h2>
-
-      <!-- Category Navigation -->
-      <div class="category-nav">
-        <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
-        <button class="category-btn" onclick="filterProducts('dimensional')">Dimensional Metrology</button>
-        <button class="category-btn" onclick="filterProducts('testing')">Testing Instruments</button>
-        <button class="category-btn" onclick="filterProducts('3d')">3D Measurement</button>
-        <button class="category-btn" onclick="filterProducts('data')">Data & Software</button>
-        <button class="category-btn" onclick="filterProducts('machine')">On-Machine Measurement</button>
-        <button class="category-btn" onclick="filterProducts('other')">Other Equipment</button>
-      </div>
-
-      <!-- Products List -->
-      <div class="products-list" id="productsList">
-        <!-- Dimensional Metrology -->
-        <div class="product-item" data-category="dimensional">
-          <div class="product-name">📏 Digital Calipers</div>
-          <div class="product-code">Code: ICP-001</div>
-          <div class="product-desc">High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm</div>
-          <a onclick="showProductDetail('ICP-001')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="dimensional">
-          <div class="product-name">📏 Mechanical Micrometers</div>
-          <div class="product-code">Code: MIC-002</div>
-          <div class="product-desc">Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use</div>
-          <a onclick="showProductDetail('MIC-002')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="dimensional">
-          <div class="product-name">📏 Height Gauges</div>
-          <div class="product-code">Code: HGE-003</div>
-          <div class="product-desc">Precision height gauges for measuring heights and step measurements with ceramic measuring surface</div>
-          <a onclick="showProductDetail('HGE-003')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="dimensional">
-          <div class="product-name">📏 Bore Gauges</div>
-          <div class="product-code">Code: BOR-004</div>
-          <div class="product-desc">Versatile bore gauges for measuring internal diameters with high accuracy and repeatability</div>
-          <a onclick="showProductDetail('BOR-004')" class="product-link">View Details →</a>
-        </div>
-
-        <!-- Testing Instruments -->
-        <div class="product-item" data-category="testing">
-          <div class="product-name">⚙️ Digital Hardness Testers</div>
-          <div class="product-code">Code: DHT-101</div>
-          <div class="product-desc">Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control</div>
-          <a onclick="showProductDetail('DHT-101')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="testing">
-          <div class="product-name">⚙️ Flaw Detectors</div>
-          <div class="product-code">Code: FLD-102</div>
-          <div class="product-desc">Ultrasonic flaw detectors for non-destructive testing and defect identification in materials</div>
-          <a onclick="showProductDetail('FLD-102')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="testing">
-          <div class="product-name">⚙️ Force Gauges & Tension Meters</div>
-          <div class="product-code">Code: FGM-103</div>
-          <div class="product-desc">Digital force measurement instruments for tension, compression, and peel force testing</div>
-          <a onclick="showProductDetail('FGM-103')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="testing">
-          <div class="product-name">⚙️ Torque Testers & Wrenches</div>
-          <div class="product-code">Code: TRQ-104</div>
-          <div class="product-desc">Calibrated torque measuring instruments and torque wrenches for precise fastening control</div>
-          <a onclick="showProductDetail('TRQ-104')" class="product-link">View Details →</a>
-        </div>
-
-        <!-- 3D Measurement -->
-        <div class="product-item" data-category="3d">
-          <div class="product-name">🔬 Vision Measuring Systems</div>
-          <div class="product-code">Code: VMS-201</div>
-          <div class="product-desc">Advanced optical measurement systems for 2D and 3D component measurement with software analysis</div>
-          <a onclick="showProductDetail('VMS-201')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="3d">
-          <div class="product-name">🔬 Profile Projectors</div>
-          <div class="product-code">Code: PPJ-202</div>
-          <div class="product-desc">Optical profile projectors for magnified inspection of complex part profiles and dimensions</div>
-          <a onclick="showProductDetail('PPJ-202')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="3d">
-          <div class="product-name">🔬 Microscopes & Magnifiers</div>
-          <div class="product-code">Code: MIC-203</div>
-          <div class="product-desc">Stereo microscopes and digital magnifiers for detailed surface inspection and measurement</div>
-          <a onclick="showProductDetail('MIC-203')" class="product-link">View Details →</a>
-        </div>
-
-        <!-- Data & Software -->
-        <div class="product-item" data-category="data">
-          <div class="product-name">📊 Digital Data Output Systems</div>
-          <div class="product-code">Code: DDO-301</div>
-          <div class="product-desc">Wireless data collection modules for connecting measuring instruments to computers and tablets</div>
-          <a onclick="showProductDetail('DDO-301')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="data">
-          <div class="product-name">📊 Measurement Software</div>
-          <div class="product-code">Code: MES-302</div>
-          <div class="product-desc">Comprehensive software solutions for measurement data management, analysis, and quality reporting</div>
-          <a onclick="showProductDetail('MES-302')" class="product-link">View Details →</a>
-        </div>
-
-        <!-- On-Machine Measurement -->
-        <div class="product-item" data-category="machine">
-          <div class="product-name">🏭 On-Machine Probe Systems</div>
-          <div class="product-code">Code: OMP-401</div>
-          <div class="product-desc">Real-time measurement probes for in-process inspection on CNC machines and production lines</div>
-          <a onclick="showProductDetail('OMP-401')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="machine">
-          <div class="product-name">🏭 Automatic Inspection Systems</div>
-          <div class="product-code">Code: AIS-402</div>
-          <div class="product-desc">Automated measurement solutions for high-volume production quality control and sorting</div>
-          <a onclick="showProductDetail('AIS-402')" class="product-link">View Details →</a>
-        </div>
-
-        <!-- Other Equipment -->
-        <div class="product-item" data-category="other">
-          <div class="product-name">🔧 Digital Scales & Balances</div>
-          <div class="product-code">Code: DSB-501</div>
-          <div class="product-desc">Precision digital weighing instruments for mass measurement in laboratories and production</div>
-          <a onclick="showProductDetail('DSB-501')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="other">
-          <div class="product-name">🔧 Pressure Gauges</div>
-          <div class="product-code">Code: PGE-502</div>
-          <div class="product-desc">Analog and digital pressure measurement instruments for various industrial applications</div>
-          <a onclick="showProductDetail('PGE-502')" class="product-link">View Details →</a>
-        </div>
-
-        <div class="product-item" data-category="other">
-          <div class="product-name">🔧 Electronic Levels</div>
-          <div class="product-code">Code: ELE-503</div>
-          <div class="product-desc">Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement</div>
-          <a onclick="showProductDetail('ELE-503')" class="product-link">View Details →</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Product Detail Page -->
-  <div id="product-detail" class="page product-detail">
-    <div class="product-detail-container">
-      <div class="detail-back">
-        <button onclick="showPage('products')" class="btn btn-back">← Back to Products</button>
-      </div>
-      <div class="detail-header">
-        <div class="detail-image" id="detailIcon"></div>
-        <div class="detail-info">
-          <h2 id="detailName"></h2>
-          <div class="detail-code" id="detailCode"></div>
-          <div class="detail-specs">
-            <h4>Specifications</h4>
-            <div id="detailSpecs"></div>
-          </div>
-          <div class="detail-actions">
-            <button class="btn-download" onclick="downloadCatalog()">📥 Download Catalog</button>
-            <button class="btn-request" onclick="requestProduct()">📧 Request Information</button>
-          </div>
-        </div>
-      </div>
-      <div class="detail-description">
-        <h3>Product Description</h3>
-        <p id="detailDescription"></p>
-        <div class="detail-features">
-          <h4>Key Features</h4>
-          <ul id="detailFeatures"></ul>
-        </div>
-        <div class="detail-features">
-          <h4>Applications</h4>
-          <ul id="detailApplications"></ul>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Footer -->
-  <footer>
-  <footer>
-    <div class="footer-content">
+  <footer id="contact">
+    <div class="footer-container">
       <div class="footer-section">
-        <h4>About NMM</h4>
+        <h4>About Us</h4>
         <ul>
-          <li><a onclick="showPage('company')">Company Profile</a></li>
-          <li><a onclick="showPage('company')">History & Milestones</a></li>
-          <li><a onclick="showPage('company')">Global Presence</a></li>
-          <li><a onclick="showPage('company')">Careers</a></li>
+          <li><a href="#">Company Profile</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Global Presence</a></li>
+          <li><a href="#">Careers</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Products</h4>
         <ul>
-          <li><a onclick="showPage('products')">Product Catalog</a></li>
-          <li><a onclick="showPage('products')">New Products</a></li>
-          <li><a href="https://insize.com/">Technical Specs</a></li>
-          <li><a href="https://insize.com/">Operation Manuals</a></li>
+          <li><a href="products.html">Product Catalog</a></li>
+          <li><a href="#">Technical Specs</a></li>
+          <li><a href="#">User Manuals</a></li>
+          <li><a href="#">Software Downloads</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Resources</h4>
+        <h4>Support</h4>
         <ul>
-          <li><a href="https://insize.com/">Video Gallery</a></li>
-          <li><a href="https://insize.com/">3D Exhibition Hall</a></li>
-          <li><a onclick="showPage('company')">Case Studies</a></li>
-          <li><a href="https://insize.com/">Application Notes</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Technical Support</a></li>
+          <li><a href="#">Calibration Services</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p style="font-size: 13px; color: #aaa; margin-bottom: 16px;">
-          NMM Co., Ltd.<br>
-          <strong style="color: #fff;">services5@tecotec.com.vn</strong><br><br>
-          <strong style="color: #ff7a16;">Website:</strong><br>
-          <a href="https://website1.com" style="color: #ff7a16; text-decoration: none;">website1.com</a>
-        </p>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@precisiontools.com">info@precisiontools.com</a></li>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li>123 Industrial Avenue</li>
+          <li>Tech City, TC 12345</li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 NMM Co., Ltd. All rights reserved. | Precision Measurement Solutions for Global Manufacturing</p>
+      <p>&copy; 2024 Precision Tools Inc. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    function showPage(pageId) {
-      // Hide all pages
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.classList.remove('active'));
-
-      // Show selected page
-      const selectedPage = document.getElementById(pageId);
-      if (selectedPage) {
-        selectedPage.classList.add('active');
-      }
-
-      // Update navigation active state
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => link.classList.remove('active'));
-      if (pageId === 'home') {
-        navLinks[0].classList.add('active'); // Home link
-      } else if (pageId === 'products') {
-        navLinks[1].classList.add('active'); // Products link
-      } else if (pageId === 'company') {
-        navLinks[2].classList.add('active'); // Company link
-      } else if (pageId === 'contact') {
-        navLinks[3].classList.add('active'); // Contact link
-      }
-    }
-
-    function showProducts(category) {
-      // Switch to products page
-      showPage('products');
-
-      // Filter products by category
-      filterProducts(category);
-    }
-
-    function filterProducts(category) {
-      const items = document.querySelectorAll('.product-item');
-      const buttons = document.querySelectorAll('.category-btn');
-
-      // Update active button
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      // If called from button click, use event.target
-      if (event && event.target) {
-        event.target.classList.add('active');
-      } else {
-        // If called from showProducts, find the button by category
-        const activeButton = document.querySelector(`.category-btn[onclick*="${category}"]`);
-        if (activeButton) {
-          activeButton.classList.add('active');
-        }
-      }
-
-      // Filter products
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    }
-
-    function sendMail(event) {
-      event.preventDefault();
-      const form = event.target;
-      const fullname = form.fullname.value.trim();
-      const contact = form.contact.value.trim();
-      const company = form.company.value.trim();
-      const product = form.product.value;
-      const message = form.message.value.trim();
-
-      const subject = encodeURIComponent('NMM Product Inquiry from Web Form');
-      const bodyLines = [
-        'Name: ' + fullname,
-        'Contact: ' + contact,
-        'Company: ' + (company || 'Not provided'),
-        'Product Category: ' + product,
-        'Message: ' + (message || 'No additional message')
-      ];
-      const body = encodeURIComponent(bodyLines.join('\n\n'));
-
-      window.location.href = 'mailto:services5@tecotec.com.vn?subject=' + subject + '&body=' + body;
-      return false;
-    }
-
-    // Product Details Database
-    const productsDB = {
-      'ICP-001': {
-        name: 'Digital Calipers',
-        icon: '📏',
-        code: 'ICP-001',
-        category: 'Dimensional Metrology',
-        specs: {
-          'Range': '0-150mm',
-          'Resolution': '0.01mm',
-          'Accuracy': '±0.03mm',
-          'Display': 'LCD Digital'
-        },
-        description: 'High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm. Features stainless steel construction for durability and reliability in laboratory and workshop environments.',
-        features: [
-          'Large LCD display with automatic zeroing',
-          'Stainless steel hardened measuring surfaces',
-          'Battery powered with low battery indicator',
-          'Data hold function for convenient reading',
-          'Metric and inch conversion'
-        ],
-        applications: [
-          'Component dimensional verification',
-          'Quality control inspections',
-          'Manufacturing workshops',
-          'Research laboratories'
-        ],
-        catalog: 'catalogs/ICP-001-catalog.pdf'
-      },
-      'MIC-002': {
-        name: 'Mechanical Micrometers',
-        icon: '📏',
-        code: 'MIC-002',
-        category: 'Dimensional Metrology',
-        specs: {
-          'Range': '0-25mm',
-          'Resolution': '0.01mm',
-          'Accuracy': '±0.004mm',
-          'Type': 'Outside Micrometer'
-        },
-        description: 'Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use. Features carbide measuring surfaces for extended wear resistance.',
-        features: [
-          'Carbide-tipped measuring surfaces',
-          'Ratchet stop for consistent pressure',
-          'Rotating sleeve with friction thimble',
-          'Graduation marks for direct reading',
-          'Case hardened barrel'
-        ],
-        applications: [
-          'Precision part measurement',
-          'Material thickness gauging',
-          'Industrial quality control',
-          'Calibration work'
-        ],
-        catalog: 'catalogs/MIC-002-catalog.pdf'
-      },
-      'HGE-003': {
-        name: 'Height Gauges',
-        icon: '📏',
-        code: 'HGE-003',
-        category: 'Dimensional Metrology',
-        specs: {
-          'Range': '0-300mm',
-          'Resolution': '0.05mm',
-          'Base Size': '100x70mm',
-          'Measurement Surface': 'Ceramic'
-        },
-        description: 'Precision height gauges for measuring heights and step measurements with ceramic measuring surface. Ideal for layout work and component dimensioning.',
-        features: [
-          'Ceramic measuring surface resistant to scratching',
-          'Heavy base for stability',
-          'Fine adjustment mechanism',
-          'Clear graduation marks',
-          'Spring-loaded measuring head'
-        ],
-        applications: [
-          'Step measurement on flat surfaces',
-          'Layout and marking work',
-          'Component height verification',
-          'Precision surface measurement'
-        ],
-        catalog: 'catalogs/HGE-003-catalog.pdf'
-      },
-      'BOR-004': {
-        name: 'Bore Gauges',
-        icon: '📏',
-        code: 'BOR-004',
-        category: 'Dimensional Metrology',
-        specs: {
-          'Range': '6-35mm',
-          'Resolution': '0.01mm',
-          'Accuracy': '±0.025mm',
-          'Type': 'Mechanical Bore Gauge'
-        },
-        description: 'Versatile bore gauges for measuring internal diameters with high accuracy and repeatability. Features self-centering design for consistent measurements.',
-        features: [
-          'Self-centering mechanism',
-          'Hardened steel measuring contacts',
-          'Smooth operation with minimal friction',
-          'Easy zero setting',
-          'Replaceable measuring tips'
-        ],
-        applications: [
-          'Internal hole diameter measurement',
-          'Bearing bore verification',
-          'Precision component gauging',
-          'Assembly inspection'
-        ],
-        catalog: 'catalogs/BOR-004-catalog.pdf'
-      },
-      'DHT-101': {
-        name: 'Digital Hardness Testers',
-        icon: '⚙️',
-        code: 'DHT-101',
-        category: 'Testing Instruments',
-        specs: {
-          'Scales Supported': 'Brinell, Vickers, Rockwell',
-          'Display': 'LED Digital',
-          'Load Range': '10-3000kgf',
-          'Measurement Speed': '< 20 seconds'
-        },
-        description: 'Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control. Provides fast and accurate results with automatic indentation depth calculation.',
-        features: [
-          'Three hardness scales in one unit',
-          'Automatic load application and withdrawal',
-          'Large backlit LCD display',
-          'USB connectivity for data export',
-          'Built-in standards reference'
-        ],
-        applications: [
-          'Material quality assessment',
-          'Hardness verification in manufacturing',
-          'Material research and development',
-          'Incoming material inspection'
-        ],
-        catalog: 'catalogs/DHT-101-catalog.pdf'
-      },
-      'FLD-102': {
-        name: 'Flaw Detectors',
-        icon: '⚙️',
-        code: 'FLD-102',
-        category: 'Testing Instruments',
-        specs: {
-          'Technology': 'Ultrasonic',
-          'Frequency': '2.5MHz / 5MHz',
-          'Display': 'Digital LCD',
-          'Detection Range': 'Up to 5000mm'
-        },
-        description: 'Ultrasonic flaw detectors for non-destructive testing and defect identification in materials. Detects surface and subsurface defects with high precision.',
-        features: [
-          'Dual frequency for better detection',
-          'High resolution display',
-          'A-scan and B-scan modes',
-          'Data recording capability',
-          'Portable and lightweight design'
-        ],
-        applications: [
-          'Weld defect detection',
-          'Material integrity testing',
-          'Aircraft and automotive inspection',
-          'Pipeline integrity assessment'
-        ],
-        catalog: 'catalogs/FLD-102-catalog.pdf'
-      },
-      'FGM-103': {
-        name: 'Force Gauges & Tension Meters',
-        icon: '⚙️',
-        code: 'FGM-103',
-        category: 'Testing Instruments',
-        specs: {
-          'Measurement Range': '0-500N',
-          'Resolution': '0.1N',
-          'Accuracy': '±0.5% of reading',
-          'Display': 'LED Digital'
-        },
-        description: 'Digital force measurement instruments for tension, compression, and peel force testing. Perfect for quality control and material testing applications.',
-        features: [
-          'Peak hold function',
-          'Overload protection',
-          'Data output to computer',
-          'Multiple attachment options',
-          'Long battery life'
-        ],
-        applications: [
-          'Material tensile testing',
-          'Product durability assessment',
-          'Component force verification',
-          'Packaging seal strength testing'
-        ],
-        catalog: 'catalogs/FGM-103-catalog.pdf'
-      },
-      'TRQ-104': {
-        name: 'Torque Testers & Wrenches',
-        icon: '⚙️',
-        code: 'TRQ-104',
-        category: 'Testing Instruments',
-        specs: {
-          'Range': '5-250 Nm',
-          'Accuracy': '±4% of reading',
-          'Type': 'Click-type Adjustable',
-          'Scale': 'Dual scale (Nm/kgf·cm)'
-        },
-        description: 'Calibrated torque measuring instruments and torque wrenches for precise fastening control. Ensures proper bolt tension and equipment reliability.',
-        features: [
-          'Audible and tactile click indication',
-          'Easy-to-read graduation marks',
-          'Reversible for tightening and loosening',
-          'Durable hardened steel construction',
-          'Calibration certificate included'
-        ],
-        applications: [
-          'Fastener assembly control',
-          'Equipment maintenance',
-          'Automotive assembly',
-          'Industrial equipment installation'
-        ],
-        catalog: 'catalogs/TRQ-104-catalog.pdf'
-      },
-      'VMS-201': {
-        name: 'Vision Measuring Systems',
-        icon: '🔬',
-        code: 'VMS-201',
-        category: '3D Measurement',
-        specs: {
-          'Measurement Field': '100x75mm',
-          'Resolution': 'Up to 0.5 microns',
-          'Magnification': '100-600x',
-          'Software': 'Advanced imaging and analysis'
-        },
-        description: 'Advanced optical measurement systems for 2D and 3D component measurement with software analysis. Ideal for complex geometry inspection.',
-        features: [
-          'CCD camera with high resolution',
-          'LED ring illumination',
-          '3D measurement capability',
-          'Automated edge detection',
-          'SPC data collection'
-        ],
-        applications: [
-          'Complex component inspection',
-          'PCB and electronic assembly',
-          'Precision gear measurement',
-          'Medical device verification'
-        ],
-        catalog: 'catalogs/VMS-201-catalog.pdf'
-      },
-      'PPJ-202': {
-        name: 'Profile Projectors',
-        icon: '🔬',
-        code: 'PPJ-202',
-        category: '3D Measurement',
-        specs: {
-          'Screen Size': '250mm',
-          'Magnification': '10x, 20x, 50x optional',
-          'Stage Size': '150x100mm',
-          'Illumination': 'LED'
-        },
-        description: 'Optical profile projectors for magnified inspection of complex part profiles and dimensions. High magnification enables detailed surface inspection.',
-        features: [
-          'Large screen for easy viewing',
-          'Interchangeable lens modules',
-          'Rotating stage for profile tracing',
-          'Adjustable focus and zoom',
-          'LED illumination for clarity'
-        ],
-        applications: [
-          'Screw and thread inspection',
-          'Tool profile verification',
-          'Gear tooth checking',
-          'Complex contour measurement'
-        ],
-        catalog: 'catalogs/PPJ-202-catalog.pdf'
-      },
-      'MIC-203': {
-        name: 'Microscopes & Magnifiers',
-        icon: '🔬',
-        code: 'MIC-203',
-        category: '3D Measurement',
-        specs: {
-          'Magnification': '7x-45x',
-          'Working Distance': '110mm',
-          'Field of View': '16mm (at 10x)',
-          'Light Source': 'LED'
-        },
-        description: 'Stereo microscopes and digital magnifiers for detailed surface inspection and measurement. Perfect for quality control and defect detection.',
-        features: [
-          'Binocular viewing for depth perception',
-          'Variable magnification zoom',
-          'Incident and transmitted lighting',
-          'USB camera option available',
-          'Rotating stage for specimen positioning'
-        ],
-        applications: [
-          'Surface defect detection',
-          'Microassembly inspection',
-          'Solder joint examination',
-          'Material surface analysis'
-        ],
-        catalog: 'catalogs/MIC-203-catalog.pdf'
-      },
-      'DDO-301': {
-        name: 'Digital Data Output Systems',
-        icon: '📊',
-        code: 'DDO-301',
-        category: 'Data & Software',
-        specs: {
-          'Connection': 'Wireless 2.4GHz / USB',
-          'Range': 'Up to 100m (wireless)',
-          'Compatibility': 'All standard measuring tools',
-          'Data Storage': 'Internal memory 500+ readings'
-        },
-        description: 'Wireless data collection modules for connecting measuring instruments to computers and tablets. Streamlines measurement data capture and processing.',
-        features: [
-          'Wireless and wired connectivity options',
-          'Real-time data transmission',
-          'Automatic timestamp recording',
-          'Battery-powered receiver unit',
-          'Cross-platform compatibility'
-        ],
-        applications: [
-          'Production line data collection',
-          'Statistical process control',
-          'Quality documentation',
-          'Real-time monitoring'
-        ],
-        catalog: 'catalogs/DDO-301-catalog.pdf'
-      },
-      'MES-302': {
-        name: 'Measurement Software',
-        icon: '📊',
-        code: 'MES-302',
-        category: 'Data & Software',
-        specs: {
-          'Platform': 'Windows / Linux / Cloud',
-          'Database': 'SQL Server compatible',
-          'Reports': 'Customizable dashboards',
-          'Users': 'Multi-user with access control'
-        },
-        description: 'Comprehensive software solutions for measurement data management, analysis, and quality reporting. Integrates with production systems.',
-        features: [
-          'Real-time SPC charts',
-          'Automated report generation',
-          'Data trending and analysis',
-          'GD&T compliance checking',
-          'Email alert notifications'
-        ],
-        applications: [
-          'Manufacturing execution systems',
-          'Measurement data analysis',
-          'Quality assurance documentation',
-          'Regulatory compliance reporting'
-        ],
-        catalog: 'catalogs/MES-302-catalog.pdf'
-      },
-      'OMP-401': {
-        name: 'On-Machine Probe Systems',
-        icon: '🏭',
-        code: 'OMP-401',
-        category: 'On-Machine Measurement',
-        specs: {
-          'Measurement Range': '5-50mm',
-          'Accuracy': '±0.05mm',
-          'Response Time': '< 100ms',
-          'Interface': 'CNC compatible'
-        },
-        description: 'Real-time measurement probes for in-process inspection on CNC machines and production lines. Enables automatic part correction.',
-        features: [
-          'Integrated CNC communication',
-          'Fast measurement cycle',
-          'Automatic tolerance checking',
-          'Tool breakage detection',
-          'Wireless data transmission'
-        ],
-        applications: [
-          'CNC machine on-board inspection',
-          'Automatic part sorting',
-          'Tool offset compensation',
-          'Production efficiency improvement'
-        ],
-        catalog: 'catalogs/OMP-401-catalog.pdf'
-      },
-      'AIS-402': {
-        name: 'Automatic Inspection Systems',
-        icon: '🏭',
-        code: 'AIS-402',
-        category: 'On-Machine Measurement',
-        specs: {
-          'Throughput': '20-100 parts/min',
-          'Measurement Speed': '< 5 seconds per part',
-          'Accuracy': '±0.1mm',
-          'Data Recording': 'Real-time to server'
-        },
-        description: 'Automated measurement solutions for high-volume production quality control and sorting. Reduces labor costs and improves consistency.',
-        features: [
-          'High-speed vision camera system',
-          'Automated part positioning',
-          'Pass/fail sorting mechanism',
-          'Statistical analysis engine',
-          'Integration with ERP systems'
-        ],
-        applications: [
-          'High-volume production lines',
-          'Automated quality gates',
-          'Plastic and metal part inspection',
-          'Electronic component screening'
-        ],
-        catalog: 'catalogs/AIS-402-catalog.pdf'
-      },
-      'DSB-501': {
-        name: 'Digital Scales & Balances',
-        icon: '🔧',
-        code: 'DSB-501',
-        category: 'Specialized Tools',
-        specs: {
-          'Capacity': '300kg',
-          'Resolution': '0.1kg',
-          'Accuracy': '±0.2%',
-          'Display': 'LCD Digital'
-        },
-        description: 'Precision digital weighing instruments for mass measurement in laboratories and production. Features stainless steel platform for durability.',
-        features: [
-          'Stainless steel weighing platform',
-          'Tare function for container weight',
-          'Backlit display for clear reading',
-          'AC/Battery powered',
-          'Data output to computer'
-        ],
-        applications: [
-          'Material receiving inspection',
-          'Component mass verification',
-          'Laboratory measurement',
-          'Production batch weighing'
-        ],
-        catalog: 'catalogs/DSB-501-catalog.pdf'
-      },
-      'PGE-502': {
-        name: 'Pressure Gauges',
-        icon: '🔧',
-        code: 'PGE-502',
-        category: 'Specialized Tools',
-        specs: {
-          'Range': '0-250 bar',
-          'Class': 'Class 1.6',
-          'Connection': 'M20x1.5',
-          'Type': 'Analog glycerin filled'
-        },
-        description: 'Analog and digital pressure measurement instruments for various industrial applications. Glycerin-filled for shock resistance.',
-        features: [
-          'Glycerin-damped needle movement',
-          'Stainless steel case',
-          'Easy-to-read scale markings',
-          'Temperature compensated',
-          'Bottom or back connection'
-        ],
-        applications: [
-          'Hydraulic system monitoring',
-          'Pneumatic pressure control',
-          'Pump discharge pressure reading',
-          'Air compressor output monitoring'
-        ],
-        catalog: 'catalogs/PGE-502-catalog.pdf'
-      },
-      'ELE-503': {
-        name: 'Electronic Levels',
-        icon: '🔧',
-        code: 'ELE-503',
-        category: 'Specialized Tools',
-        specs: {
-          'Length': '600mm',
-          'Accuracy': '±0.5mm/m',
-          'Display': 'LCD Digital',
-          'Features': 'Bluetooth connectivity'
-        },
-        description: 'Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement. Perfect for modern installation and alignment work.',
-        features: [
-          'Digital angle measurement display',
-          'Bluetooth data transmission',
-          'Water-resistant design',
-          'Magnetic base included',
-          'Automatic calibration'
-        ],
-        applications: [
-          'Equipment installation and alignment',
-          'Structural leveling',
-          'Angle measurement',
-          'Precision surface setup'
-        ],
-        catalog: 'catalogs/ELE-503-catalog.pdf'
-      }
-    };
-
-    let currentProductCode = null;
-
-    function showProductDetail(productCode) {
-      currentProductCode = productCode;
-      const product = productsDB[productCode];
-      
-      if (!product) {
-        alert('Product not found');
-        return;
-      }
-
-      // Populate product details
-      document.getElementById('detailIcon').textContent = product.icon;
-      document.getElementById('detailName').textContent = product.name;
-      document.getElementById('detailCode').textContent = 'Product Code: ' + product.code;
-      document.getElementById('detailDescription').textContent = product.description;
-
-      // Populate specifications
-      let specsHTML = '';
-      for (const [key, value] of Object.entries(product.specs)) {
-        specsHTML += `<div class="spec-item"><span class="spec-label">${key}</span><span class="spec-value">${value}</span></div>`;
-      }
-      document.getElementById('detailSpecs').innerHTML = specsHTML;
-
-      // Populate features
-      let featuresHTML = '';
-      product.features.forEach(feature => {
-        featuresHTML += `<li>${feature}</li>`;
-      });
-      document.getElementById('detailFeatures').innerHTML = featuresHTML;
-
-      // Populate applications
-      let applicationsHTML = '';
-      product.applications.forEach(app => {
-        applicationsHTML += `<li>${app}</li>`;
-      });
-      document.getElementById('detailApplications').innerHTML = applicationsHTML;
-
-      // Show the detail page
-      showPage('product-detail');
-      window.scrollTo(0, 0);
-    }
-
-    function downloadCatalog() {
-      if (currentProductCode) {
-        const product = productsDB[currentProductCode];
-        if (product && product.catalog) {
-          // Simulated catalog download - in real scenario, link to actual PDF
-          alert('Catalog for ' + product.name + ' (Code: ' + product.code + ') will be downloaded shortly.\n\nIn production, this would download: ' + product.catalog);
-          // window.location.href = product.catalog;
-        }
-      }
-    }
-
-    function requestProduct() {
-      if (currentProductCode) {
-        const product = productsDB[currentProductCode];
-        const subject = encodeURIComponent('Product Inquiry: ' + product.name + ' (' + product.code + ')');
-        const body = encodeURIComponent('I am interested in the ' + product.name + ' (Code: ' + product.code + ').\n\nPlease provide more information about this product, including:\n- Pricing\n- Lead time\n- Technical specifications\n- Availability\n\nThank you.');
-        window.location.href = 'mailto:services5@tecotec.com.vn?subject=' + subject + '&body=' + body;
-      }
-    }
-  </script>
+  <script src="data.js"></script>
 </body>
 </html>
+

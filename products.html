@@ -1,366 +1,393 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products - INSIZE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Precision Measuring Tools</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       line-height: 1.6;
-      background: #f8f9fa;
+      background: #f5f5f5;
     }
+
     /* Header */
     header {
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
+      background: #0b2c5f;
+      color: white;
+      padding: 1.5rem 0;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .header-content {
+
+    .header-container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
     }
+
     .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: #003d82;
-      letter-spacing: -0.5px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
       text-decoration: none;
+      color: white;
+      cursor: pointer;
     }
-    nav {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+
     nav a {
+      color: white;
       text-decoration: none;
-      color: #333;
-      font-size: 14px;
+      margin-left: 2rem;
+      transition: color 0.3s;
       font-weight: 500;
-      transition: color 0.3s ease;
     }
-    nav a:hover, nav a.active {
-      color: #003d82;
+
+    nav a:hover {
+      color: #64b5f6;
     }
-    /* Main Content */
+
+    /* Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 2rem;
     }
-    .section {
-      padding: 60px 20px;
+
+    /* Main Content */
+    .main {
+      padding: 2rem 0;
     }
-    .section-title {
-      text-align: left;
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #003d82;
+
+    .page-title {
+      font-size: 2.2rem;
+      color: #0b2c5f;
+      margin-bottom: 0.5rem;
     }
-    /* Category Navigation */
-    .category-nav {
-      background: #fff;
-      padding: 24px;
+
+    .breadcrumb {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: #154a9c;
+      text-decoration: none;
+    }
+
+    /* Filter Section */
+    .filter-bar {
+      background: white;
+      padding: 1.5rem;
       border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
     }
-    .category-btn {
-      padding: 10px 20px;
-      border: 2px solid #003d82;
-      background: #fff;
-      color: #003d82;
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #154a9c;
+      background: white;
+      color: #154a9c;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 14px;
+      transition: all 0.3s;
+      font-size: 0.95rem;
     }
-    .category-btn:hover, .category-btn.active {
-      background: #003d82;
-      color: #fff;
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #154a9c;
+      color: white;
     }
+
     /* Products Grid */
-    .products-list {
+    .products-grid {
       display: grid;
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
     }
-    .product-item {
-      background: #fff;
-      border-left: 4px solid #003d82;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-    .product-item:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      transform: translateX(4px);
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
-    .product-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: #003d82;
-      margin-bottom: 8px;
+
+    .product-image {
+      background: linear-gradient(135deg, #0b2c5f 0%, #154a9c 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      font-size: 4rem;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    .product-info {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-model {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0b2c5f;
+      margin-bottom: 0.5rem;
+    }
+
     .product-code {
       color: #999;
-      font-size: 13px;
-      margin-bottom: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
     }
-    .product-desc {
+
+    .product-description {
       color: #666;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
+
     .product-link {
-      color: #ff7a16;
+      display: inline-block;
+      color: #ff6b35;
+      font-weight: bold;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
+
     .product-link:hover {
-      color: #e56a05;
-      text-decoration: underline;
+      color: #e55a2b;
     }
-    .hidden {
-      display: none;
+
+    /* No Results */
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: #666;
     }
+
     /* Footer */
     footer {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 40px 20px 20px;
-      text-align: center;
+      background: #0b2c5f;
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 5rem;
     }
-    footer p {
-      color: #888;
-      font-size: 13px;
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      color: #64b5f6;
+    }
+
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #444;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+      }
+
+      .filter-bar {
+        flex-direction: column;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-title {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="header-content">
-      <a href="web.html" class="logo">NMM</a>
+    <div class="header-container">
+      <a href="index.html" class="logo">PRECISION TOOLS</a>
       <nav>
-        <a href="web.html">Home</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="web.html#company">Company</a>
-        <a href="web.html#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Section -->
-  <section class="section container">
-    <h2 class="section-title">Products</h2>
-    
-    <!-- Category Navigation -->
-    <div class="category-nav">
-      <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
-      <button class="category-btn" onclick="filterProducts('dimensional')">Dimensional Metrology</button>
-      <button class="category-btn" onclick="filterProducts('testing')">Testing Instruments</button>
-      <button class="category-btn" onclick="filterProducts('3d')">3D Measurement</button>
-      <button class="category-btn" onclick="filterProducts('data')">Data & Software</button>
-      <button class="category-btn" onclick="filterProducts('machine')">On-Machine Measurement</button>
-      <button class="category-btn" onclick="filterProducts('other')">Other Equipment</button>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span id="categoryName">Products</span>
+      </div>
+
+      <h1 class="page-title">Product Models</h1>
+
+      <!-- Filter -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" onclick="filterByCategory('all')">All Models</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="no-results" id="noResults" style="display:none;">No products found</div>
     </div>
-
-    <!-- Products List -->
-    <div class="products-list" id="productsList">
-      <!-- Dimensional Metrology -->
-      <div class="product-item" data-category="dimensional">
-        <div class="product-name">📏 Digital Calipers</div>
-        <div class="product-code">Code: ICP-001</div>
-        <div class="product-desc">High-precision electronic calipers with digital display for accurate dimensional measurements up to 0.01mm</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="dimensional">
-        <div class="product-name">📏 Mechanical Micrometers</div>
-        <div class="product-code">Code: MIC-002</div>
-        <div class="product-desc">Precision micrometers for exact measurement of small dimensions, suitable for workshop and laboratory use</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="dimensional">
-        <div class="product-name">📏 Height Gauges</div>
-        <div class="product-code">Code: HGE-003</div>
-        <div class="product-desc">Precision height gauges for measuring heights and step measurements with ceramic measuring surface</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="dimensional">
-        <div class="product-name">📏 Bore Gauges</div>
-        <div class="product-code">Code: BOR-004</div>
-        <div class="product-desc">Versatile bore gauges for measuring internal diameters with high accuracy and repeatability</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <!-- Testing Instruments -->
-      <div class="product-item" data-category="testing">
-        <div class="product-name">⚙️ Digital Hardness Testers</div>
-        <div class="product-code">Code: DHT-101</div>
-        <div class="product-desc">Automatic hardness testers supporting Brinell, Vickers, and Rockwell scales for material quality control</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="testing">
-        <div class="product-name">⚙️ Flaw Detectors</div>
-        <div class="product-code">Code: FLD-102</div>
-        <div class="product-desc">Ultrasonic flaw detectors for non-destructive testing and defect identification in materials</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="testing">
-        <div class="product-name">⚙️ Force Gauges & Tension Meters</div>
-        <div class="product-code">Code: FGM-103</div>
-        <div class="product-desc">Digital force measurement instruments for tension, compression, and peel force testing</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="testing">
-        <div class="product-name">⚙️ Torque Testers & Wrenches</div>
-        <div class="product-code">Code: TRQ-104</div>
-        <div class="product-desc">Calibrated torque measuring instruments and torque wrenches for precise fastening control</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <!-- 3D Measurement -->
-      <div class="product-item" data-category="3d">
-        <div class="product-name">🔬 Vision Measuring Systems</div>
-        <div class="product-code">Code: VMS-201</div>
-        <div class="product-desc">Advanced optical measurement systems for 2D and 3D component measurement with software analysis</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="3d">
-        <div class="product-name">🔬 Profile Projectors</div>
-        <div class="product-code">Code: PPJ-202</div>
-        <div class="product-desc">Optical profile projectors for magnified inspection of complex part profiles and dimensions</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="3d">
-        <div class="product-name">🔬 Microscopes & Magnifiers</div>
-        <div class="product-code">Code: MIC-203</div>
-        <div class="product-desc">Stereo microscopes and digital magnifiers for detailed surface inspection and measurement</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <!-- Data & Software -->
-      <div class="product-item" data-category="data">
-        <div class="product-name">📊 Digital Data Output Systems</div>
-        <div class="product-code">Code: DDO-301</div>
-        <div class="product-desc">Wireless data collection modules for connecting measuring instruments to computers and tablets</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="data">
-        <div class="product-name">📊 Measurement Software</div>
-        <div class="product-code">Code: MES-302</div>
-        <div class="product-desc">Comprehensive software solutions for measurement data management, analysis, and quality reporting</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <!-- On-Machine Measurement -->
-      <div class="product-item" data-category="machine">
-        <div class="product-name">🏭 On-Machine Probe Systems</div>
-        <div class="product-code">Code: OMP-401</div>
-        <div class="product-desc">Real-time measurement probes for in-process inspection on CNC machines and production lines</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="machine">
-        <div class="product-name">🏭 Automatic Inspection Systems</div>
-        <div class="product-code">Code: AIS-402</div>
-        <div class="product-desc">Automated measurement solutions for high-volume production quality control and sorting</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <!-- Other Equipment -->
-      <div class="product-item" data-category="other">
-        <div class="product-name">🔧 Digital Scales & Balances</div>
-        <div class="product-code">Code: DSB-501</div>
-        <div class="product-desc">Precision digital weighing instruments for mass measurement in laboratories and production</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="other">
-        <div class="product-name">🔧 Pressure Gauges</div>
-        <div class="product-code">Code: PGE-502</div>
-        <div class="product-desc">Analog and digital pressure measurement instruments for various industrial applications</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-
-      <div class="product-item" data-category="other">
-        <div class="product-name">🔧 Electronic Levels</div>
-        <div class="product-code">Code: ELE-503</div>
-        <div class="product-desc">Digital spirit levels with Bluetooth connectivity for precise leveling and angle measurement</div>
-        <a href="https://insize.com/" target="_blank" class="product-link">View Details →</a>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 INSIZE Co., Ltd. All rights reserved. | Precision Measurement Solutions</p>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <a href="index.html">Company Profile</a>
+        <a href="#">Our Mission</a>
+        <a href="#">Global Presence</a>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Technical Support</a>
+        <a href="#">Calibration Services</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="mailto:info@precisiontools.com">info@precisiontools.com</a>
+        <a href="tel:+1234567890">+1 (234) 567-890</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Precision Tools Inc. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script src="data.js"></script>
   <script>
-    function filterProducts(category) {
-      const items = document.querySelectorAll('.product-item');
-      const buttons = document.querySelectorAll('.category-btn');
-      
-      // Update active button
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      
+    // Get category from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'all';
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts(category);
+    });
+
+    function renderProducts(selectedCategory) {
+      const grid = document.getElementById('productsGrid');
+      const noResults = document.getElementById('noResults');
+      const categoryName = document.getElementById('categoryName');
+
+      // Update breadcrumb
+      const categoryTitle = PRODUCTS.categories.find(c => c.id === selectedCategory);
+      if (categoryTitle) {
+        categoryName.textContent = categoryTitle.name;
+      }
+
       // Filter products
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
+      let products = PRODUCTS.models;
+      if (selectedCategory !== 'all') {
+        products = products.filter(p => p.category === selectedCategory);
+      }
+
+      // Render or show no results
+      if (products.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+
+      noResults.style.display = 'none';
+      grid.innerHTML = products.map(product => `
+        <div class="product-card" onclick="goToDetail('${product.id}')">
+          <div class="product-image">${product.image}</div>
+          <div class="product-info">
+            <div class="product-model">${product.name}</div>
+            <div class="product-code">Model: ${product.id}</div>
+            <p class="product-description">${product.shortDescription}</p>
+            <a href="#" class="product-link" onclick="event.preventDefault(); goToDetail('${product.id}')">View Details →</a>
+          </div>
+        </div>
+      `).join('');
     }
 
-    // Auto-filter based on URL parameter
-    window.addEventListener('load', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const category = urlParams.get('category');
-      
-      if (category) {
-        const buttons = document.querySelectorAll('.category-btn');
-        buttons.forEach(btn => {
-          if (btn.getAttribute('onclick').includes(`'${category}'`)) {
-            btn.click();
-          }
-        });
-      }
-    });
+    function filterByCategory(cat) {
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Render filtered products
+      renderProducts(cat);
+
+      // Update URL
+      window.history.pushState({}, '', `products.html?category=${cat}`);
+    }
+
+    function goToDetail(productId) {
+      window.location.href = `product-detail.html?id=${productId}`;
+    }
   </script>
 </body>
 </html>
